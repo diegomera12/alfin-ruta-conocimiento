@@ -1,384 +1,733 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ALFIN - La Ruta del Conocimiento</title>
-    <meta
-      name="description"
-      content="Descubre cómo la Alfabetización Informacional transforma la gestión del conocimiento"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALFIN - La Ruta del Conocimiento | Vélez Sánchez Lady Liliana</title>
+    <meta name="description" content="Proyecto educativo sobre Alfabetización Informacional y Gestión del Conocimiento">
+    <meta name="author" content="Vélez Sánchez Lady Liliana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-icon">📚</div>
+            <div class="loader-text">Cargando conocimiento...</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <a href="#" class="nav-logo"
-          ><span class="logo-icon">📚</span><span>ALFIN</span></a
-        >
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-          <li><a href="#que-es" class="nav-link">¿Qué es ALFIN?</a></li>
-          <li><a href="#caso" class="nav-link">Caso de Estudio</a></li>
-          <li><a href="#recursos" class="nav-link">Recursos</a></li>
-          <li><a href="#como-se-hizo" class="nav-link">Cómo se hizo</a></li>
-        </ul>
-        <button class="nav-toggle" id="navToggle">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">ALFIN</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" class="nav-link active">🏠 Inicio</a></li>
+                <li><a href="#que-es" class="nav-link">📖 ¿Qué es ALFIN?</a></li>
+                <li><a href="#caso" class="nav-link">📊 Caso de Estudio</a></li>
+                <li><a href="#recursos" class="nav-link">📚 Recursos</a></li>
+                <li><a href="#como-se-hizo" class="nav-link">🔧 Cómo se hizo</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+        </div>
+        <div class="nav-progress"><div class="nav-progress-bar" id="scrollProgress"></div></div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-      <div class="hero-bg">
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span>✨</span><span>Alfabetización Informacional</span>
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
         </div>
-        <h1 class="hero-title">
-          La Ruta del <span class="gradient-text">Conocimiento</span>
-        </h1>
-        <p class="hero-description">
-          Descubre cómo ALFIN transforma la manera en que las organizaciones
-          gestionan, comparten y aprovechan el conocimiento.
-        </p>
-        <div class="hero-cta">
-          <a href="#que-es" class="btn btn-primary">Explorar →</a>
-          <a href="#caso" class="btn btn-secondary">Ver Caso de Estudio</a>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <span class="badge-pulse"></span>
+                <span>✨ Alfabetización Informacional</span>
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                <span class="title-line">La Ruta del</span>
+                <span class="title-line gradient-text glitch" data-text="Conocimiento">Conocimiento</span>
+            </h1>
+            <p class="hero-description animate-on-scroll">
+                Descubre cómo ALFIN transforma la manera en que las organizaciones 
+                gestionan, comparten y aprovechan el conocimiento para alcanzar el éxito en la era digital.
+            </p>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="85">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Mejora en productividad</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="60">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Menos tiempo buscando</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Decisiones informadas</span>
+                </div>
+            </div>
+            <div class="hero-cta animate-on-scroll">
+                <a href="#que-es" class="btn btn-primary">
+                    <span>✨ Explorar</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#caso" class="btn btn-secondary">
+                    <span class="btn-icon">📊</span>
+                    <span>Ver Caso de Estudio</span>
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="hero-visual">
-        <div class="floating-card card-1">
-          <div class="card-icon">🔍</div>
-          <span>Buscar</span>
+        <div class="hero-image animate-on-scroll">
+            <img src="assets/hero.png" alt="Conocimiento e información" class="hero-main-image">
         </div>
-        <div class="floating-card card-2">
-          <div class="card-icon">📊</div>
-          <span>Analizar</span>
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll para explorar</span>
         </div>
-        <div class="floating-card card-3">
-          <div class="card-icon">💡</div>
-          <span>Aplicar</span>
-        </div>
-        <div class="floating-card card-4">
-          <div class="card-icon">🔄</div>
-          <span>Compartir</span>
-        </div>
-      </div>
     </section>
 
+    <!-- ¿Qué es ALFIN? -->
     <section id="que-es" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Fundamentos</span>
-          <h2 class="section-title">
-            ¿Qué es <span class="gradient-text">ALFIN</span>?
-          </h2>
-          <p class="section-subtitle">
-            La Alfabetización Informacional es el conjunto de competencias que
-            permite reconocer cuándo se necesita información, dónde localizarla,
-            cómo evaluarla y utilizarla de manera ética.
-          </p>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">📖 Fundamentos</span>
+                <h2 class="section-title animate-on-scroll">¿Qué es <span class="gradient-text">ALFIN</span>?</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    La <strong>Alfabetización Informacional</strong> (ALFIN) es el conjunto de competencias 
+                    que permite reconocer cuándo se necesita información, dónde localizarla, cómo evaluarla 
+                    y utilizarla de manera ética y efectiva para resolver problemas y tomar decisiones.
+                </p>
+            </div>
+
+            <div class="alfin-visual animate-on-scroll">
+                <img src="assets/search.png" alt="Búsqueda de información">
+            </div>
+
+            <div class="competencies-interactive">
+                <div class="competency-tabs">
+                    <button class="tab-btn active" data-tab="identificar">🎯 Identificar</button>
+                    <button class="tab-btn" data-tab="localizar">🔎 Localizar</button>
+                    <button class="tab-btn" data-tab="evaluar">⚖️ Evaluar</button>
+                    <button class="tab-btn" data-tab="usar">🔧 Usar</button>
+                    <button class="tab-btn" data-tab="comunicar">💬 Comunicar</button>
+                    <button class="tab-btn" data-tab="aprender">📈 Aprender</button>
+                </div>
+                <div class="competency-content">
+                    <div class="tab-content active" id="identificar">
+                        <div class="content-icon">🎯</div>
+                        <h3>Identificar Necesidades de Información</h3>
+                        <p>Es la capacidad de reconocer cuándo se necesita información y definir claramente qué tipo de información se requiere para resolver un problema o tomar una decisión importante.</p>
+                        <ul class="content-list">
+                            <li>Formular preguntas de investigación claras y precisas</li>
+                            <li>Determinar el alcance y profundidad de la información necesaria</li>
+                            <li>Identificar las fuentes potenciales más adecuadas</li>
+                            <li>Establecer criterios para delimitar la búsqueda</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="localizar">
+                        <div class="content-icon">🔎</div>
+                        <h3>Localizar y Acceder a la Información</h3>
+                        <p>Implica saber dónde y cómo buscar información utilizando diversas fuentes y herramientas de manera eficiente y sistemática.</p>
+                        <ul class="content-list">
+                            <li>Utilizar bases de datos académicas y motores de búsqueda especializados</li>
+                            <li>Aplicar estrategias de búsqueda avanzadas (operadores booleanos)</li>
+                            <li>Acceder a fuentes primarias y secundarias confiables</li>
+                            <li>Navegar catálogos de bibliotecas y repositorios digitales</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="evaluar">
+                        <div class="content-icon">⚖️</div>
+                        <h3>Evaluar Críticamente la Información</h3>
+                        <p>Consiste en analizar la calidad, relevancia, confiabilidad y veracidad de la información encontrada antes de utilizarla.</p>
+                        <ul class="content-list">
+                            <li>Verificar la autoridad y credenciales del autor o fuente</li>
+                            <li>Detectar sesgos, propaganda y desinformación</li>
+                            <li>Comparar información de múltiples fuentes independientes</li>
+                            <li>Evaluar la actualidad y vigencia de los datos</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="usar">
+                        <div class="content-icon">🔧</div>
+                        <h3>Usar Éticamente la Información</h3>
+                        <p>Aplicar la información de manera ética y responsable, respetando derechos de autor y citando fuentes correctamente.</p>
+                        <ul class="content-list">
+                            <li>Respetar la propiedad intelectual y derechos de autor</li>
+                            <li>Citar correctamente usando normas APA, MLA u otras</li>
+                            <li>Evitar el plagio en todas sus formas</li>
+                            <li>Reconocer las contribuciones de otros investigadores</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="comunicar">
+                        <div class="content-icon">💬</div>
+                        <h3>Comunicar Efectivamente el Conocimiento</h3>
+                        <p>Compartir conocimiento de forma clara, organizada y adaptada al público objetivo y contexto específico.</p>
+                        <ul class="content-list">
+                            <li>Sintetizar información compleja de manera comprensible</li>
+                            <li>Adaptar el mensaje según la audiencia destinataria</li>
+                            <li>Utilizar diversos formatos de comunicación (escrito, visual, oral)</li>
+                            <li>Presentar argumentos de manera lógica y coherente</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="aprender">
+                        <div class="content-icon">📈</div>
+                        <h3>Aprendizaje Continuo y Autónomo</h3>
+                        <p>Desarrollar habilidades de aprendizaje autónomo y actualización constante del conocimiento a lo largo de la vida.</p>
+                        <ul class="content-list">
+                            <li>Mantenerse actualizado con nuevas fuentes y tecnologías</li>
+                            <li>Desarrollar pensamiento crítico permanente</li>
+                            <li>Adaptarse a nuevas herramientas de información</li>
+                            <li>Reflexionar sobre el propio proceso de aprendizaje</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gestión del Conocimiento -->
+            <div class="knowledge-section animate-on-scroll">
+                <div class="knowledge-content">
+                    <span class="section-label">🔗 Conexión clave</span>
+                    <h3>ALFIN + Gestión del Conocimiento Organizacional</h3>
+                    <p>La gestión del conocimiento organizacional se potencia significativamente cuando los colaboradores poseen competencias ALFIN desarrolladas:</p>
+                    <div class="benefits-list">
+                        <div class="benefit-item"><span class="benefit-icon">✓</span><span>Toma de decisiones basada en información confiable y verificada</span></div>
+                        <div class="benefit-item"><span class="benefit-icon">✓</span><span>Reducción significativa de la sobrecarga informativa</span></div>
+                        <div class="benefit-item"><span class="benefit-icon">✓</span><span>Mayor innovación y creatividad en la organización</span></div>
+                        <div class="benefit-item"><span class="benefit-icon">✓</span><span>Preservación del conocimiento institucional valioso</span></div>
+                        <div class="benefit-item"><span class="benefit-icon">✓</span><span>Colaboración efectiva entre equipos multidisciplinarios</span></div>
+                    </div>
+                </div>
+                <div class="knowledge-visual">
+                    <div class="cycle-diagram">
+                        <div class="cycle-center"><span>GC</span></div>
+                        <div class="cycle-item"><div class="cycle-icon">📥</div><span>Capturar</span></div>
+                        <div class="cycle-item"><div class="cycle-icon">🗂️</div><span>Organizar</span></div>
+                        <div class="cycle-item"><div class="cycle-icon">🔄</div><span>Compartir</span></div>
+                        <div class="cycle-item"><div class="cycle-icon">🚀</div><span>Aplicar</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Identificar Necesidades</h3>
-            <p>
-              Reconocer cuándo la información es necesaria y definir qué tipo se
-              requiere.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔎</div>
-            <h3>Localizar Fuentes</h3>
-            <p>
-              Saber dónde y cómo buscar información utilizando diversas fuentes.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">⚖️</div>
-            <h3>Evaluar Críticamente</h3>
-            <p>
-              Analizar la calidad, relevancia y veracidad de la información.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔧</div>
-            <h3>Usar Éticamente</h3>
-            <p>
-              Aplicar la información respetando derechos de autor y citando
-              fuentes.
-            </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🔄</div>
-            <h3>Comunicar</h3>
-            <p>Compartir conocimiento de forma clara y adaptada al contexto.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <h3>Aprender Siempre</h3>
-            <p>
-              Desarrollar habilidades de aprendizaje autónomo y actualización.
-            </p>
-          </div>
-        </div>
-        <div class="knowledge-section">
-          <div class="knowledge-content">
-            <h3>ALFIN + Gestión del Conocimiento</h3>
-            <ul class="knowledge-list">
-              <li>✓ Toma de decisiones basada en información confiable</li>
-              <li>✓ Reducción de la sobrecarga informativa</li>
-              <li>✓ Mayor innovación organizacional</li>
-              <li>✓ Preservación del conocimiento institucional</li>
-              <li>✓ Colaboración efectiva entre equipos</li>
-            </ul>
-          </div>
-          <div class="cycle-diagram">
-            <div class="cycle-center">Conocimiento</div>
-            <div class="cycle-item" style="--i: 0">📥 Capturar</div>
-            <div class="cycle-item" style="--i: 1">🗂️ Organizar</div>
-            <div class="cycle-item" style="--i: 2">🔄 Compartir</div>
-            <div class="cycle-item" style="--i: 3">🚀 Aplicar</div>
-          </div>
-        </div>
-      </div>
     </section>
 
+    <!-- Caso de Estudio -->
     <section id="caso" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Aplicación práctica</span>
-          <h2 class="section-title">
-            Caso de <span class="gradient-text">Estudio</span>
-          </h2>
-        </div>
-        <div class="case-study">
-          <div class="case-header">
-            <div class="case-company">
-              <div class="company-logo">🏢</div>
-              <div>
-                <h3>TechNova Solutions</h3>
-                <span>Consultoría tecnológica</span>
-              </div>
-            </div>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-marker">1</div>
-              <div class="timeline-content">
-                <h4>⚠️ El Problema</h4>
-                <p>
-                  Empleados duplicaban esfuerzos buscando datos, proyectos
-                  fallaban por usar información desactualizada. El 60% del
-                  tiempo se invertía en buscar información existente.
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">📊 Aplicación práctica</span>
+                <h2 class="section-title animate-on-scroll">Caso de <span class="gradient-text">Estudio</span></h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Cómo ALFIN transformó la gestión del conocimiento en una organización tecnológica
                 </p>
-                <div class="stats">
-                  <span><strong>60%</strong> Tiempo perdido</span
-                  ><span><strong>45%</strong> Proyectos retrasados</span>
+            </div>
+
+            <div class="case-study animate-on-scroll">
+                <div class="case-hero">
+                    <img src="assets/success.png" alt="TechNova Solutions" class="case-image">
+                    <div class="case-overlay">
+                        <div class="case-company">
+                            <div class="company-logo">🏢</div>
+                            <div class="company-info">
+                                <h3>TechNova Solutions</h3>
+                                <span>Empresa de consultoría tecnológica | 500+ empleados</span>
+                            </div>
+                        </div>
+                        <div class="case-tags">
+                            <span class="tag">Gestión del Conocimiento</span>
+                            <span class="tag">ALFIN</span>
+                            <span class="tag">Transformación Digital</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-marker">2</div>
-              <div class="timeline-content">
-                <h4>💡 La Solución ALFIN</h4>
-                <p>
-                  Programa integral de Alfabetización Informacional con
-                  capacitación en búsqueda, evaluación crítica, sistemas de
-                  gestión documental y comunidades de práctica.
-                </p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-marker">3</div>
-              <div class="timeline-content">
-                <h4>🎯 Los Resultados</h4>
-                <div class="results-grid">
-                  <div class="result-card">
-                    <span>-40%</span><small>Tiempo buscando</small>
-                  </div>
-                  <div class="result-card">
-                    <span>+35%</span><small>Productividad</small>
-                  </div>
-                  <div class="result-card">
-                    <span>+50%</span><small>Ideas innovadoras</small>
-                  </div>
-                  <div class="result-card">
-                    <span>+28%</span><small>Satisfacción</small>
-                  </div>
+
+                <div class="case-timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"><span>1</span></div>
+                        <div class="timeline-card problem">
+                            <div class="card-header">
+                                <span class="card-icon">⚠️</span>
+                                <h4>El Problema Identificado</h4>
+                            </div>
+                            <p>TechNova enfrentaba una crisis de información seria: los empleados duplicaban constantemente esfuerzos buscando los mismos datos, varios proyectos importantes fallaban por usar información desactualizada o incorrecta, y el conocimiento valioso se perdía cuando los expertos dejaban la empresa sin documentar adecuadamente su experiencia.</p>
+                            <div class="problem-stats">
+                                <div class="stat-box">
+                                    <span class="stat-val">60%</span>
+                                    <span class="stat-desc">del tiempo productivo se invertía buscando información que ya existía en algún lugar</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-val">45%</span>
+                                    <span class="stat-desc">de los proyectos sufrían retrasos por información errónea o desactualizada</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-val">$2M</span>
+                                    <span class="stat-desc">en pérdidas anuales estimadas por ineficiencia informacional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"><span>2</span></div>
+                        <div class="timeline-card solution">
+                            <div class="card-header">
+                                <span class="card-icon">💡</span>
+                                <h4>La Solución ALFIN Implementada</h4>
+                            </div>
+                            <p>Se diseñó e implementó un programa integral de Alfabetización Informacional que transformó la cultura organizacional desde las bases:</p>
+                            <div class="solution-steps">
+                                <div class="step"><span class="step-num">1</span><span class="step-text">Diagnóstico inicial de competencias informacionales en todos los equipos</span></div>
+                                <div class="step"><span class="step-num">2</span><span class="step-text">Programa de capacitación en técnicas de búsqueda y evaluación crítica</span></div>
+                                <div class="step"><span class="step-num">3</span><span class="step-text">Implementación de un sistema centralizado de gestión documental</span></div>
+                                <div class="step"><span class="step-num">4</span><span class="step-text">Creación de comunidades de práctica por áreas de conocimiento</span></div>
+                                <div class="step"><span class="step-num">5</span><span class="step-text">Establecimiento de un programa de mentorías para transferencia de conocimiento</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"><span>3</span></div>
+                        <div class="timeline-card results">
+                            <div class="card-header">
+                                <span class="card-icon">🎯</span>
+                                <h4>Los Resultados Obtenidos (6 meses después)</h4>
+                            </div>
+                            <div class="results-grid">
+                                <div class="result-card"><div class="result-icon">⏱️</div><div class="result-value">-40%</div><div class="result-label">Tiempo buscando información</div></div>
+                                <div class="result-card"><div class="result-icon">📈</div><div class="result-value">+35%</div><div class="result-label">Productividad por proyecto</div></div>
+                                <div class="result-card"><div class="result-icon">💡</div><div class="result-value">+50%</div><div class="result-label">Ideas innovadoras generadas</div></div>
+                                <div class="result-card"><div class="result-icon">😊</div><div class="result-value">+28%</div><div class="result-label">Satisfacción del empleado</div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                <div class="case-quote">
+                    <div class="quote-icon">"</div>
+                    <blockquote>
+                        ALFIN no solo cambió cómo buscamos información, transformó completamente cómo pensamos, colaboramos y resolvemos problemas. 
+                        Ahora somos una organización que aprende y comparte conocimiento de manera natural y constante.
+                    </blockquote>
+                    <cite>
+                        <div class="cite-avatar">👩‍💼</div>
+                        <div class="cite-info">
+                            <strong>María Elena González</strong>
+                            <span>Directora de Innovación y Desarrollo, TechNova Solutions</span>
+                        </div>
+                    </cite>
+                </div>
             </div>
-          </div>
-          <blockquote>
-            "ALFIN no solo cambió cómo buscamos información, transformó cómo
-            pensamos y colaboramos."<cite
-              >— Director de Innovación, TechNova</cite
-            >
-          </blockquote>
         </div>
-      </div>
     </section>
 
+    <!-- Recursos -->
     <section id="recursos" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Aprende más</span>
-          <h2 class="section-title">
-            <span class="gradient-text">Recursos</span>
-          </h2>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">📚 Aprende más</span>
+                <h2 class="section-title animate-on-scroll"><span class="gradient-text">Recursos</span> y Recomendaciones</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Explora estos recursos seleccionados para profundizar en ALFIN y gestión del conocimiento
+                </p>
+            </div>
+
+            <div class="alfin-visual animate-on-scroll">
+                <img src="assets/resources.png" alt="Recursos educativos">
+            </div>
+
+            <div class="resources-grid">
+                <a href="https://www.ala.org/acrl/standards/ilframework" target="_blank" class="resource-card animate-on-scroll">
+                    <div class="resource-header"><div class="resource-icon">📖</div><span class="resource-type">Estándar Internacional</span></div>
+                    <h3>Marco ACRL para Alfabetización Informacional</h3>
+                    <p>El estándar más reconocido internacionalmente para definir y evaluar competencias informacionales en la educación superior.</p>
+                    <div class="resource-link">Leer más <span>→</span></div>
+                </a>
+                <a href="https://www.unesco.org/en/media-information-literacy" target="_blank" class="resource-card animate-on-scroll">
+                    <div class="resource-header"><div class="resource-icon">🎓</div><span class="resource-type">Programa Global</span></div>
+                    <h3>UNESCO: Alfabetización Mediática e Informacional</h3>
+                    <p>Programa educativo mundial que promueve el desarrollo de competencias críticas para navegar el ecosistema informacional del siglo XXI.</p>
+                    <div class="resource-link">Explorar <span>→</span></div>
+                </a>
+                <a href="https://www.ifla.org" target="_blank" class="resource-card animate-on-scroll">
+                    <div class="resource-header"><div class="resource-icon">🔬</div><span class="resource-type">Guía Profesional</span></div>
+                    <h3>Directrices IFLA sobre Alfabetización Informacional</h3>
+                    <p>Lineamientos de la Federación Internacional de Asociaciones de Bibliotecarios para implementar programas ALFIN efectivos.</p>
+                    <div class="resource-link">Consultar <span>→</span></div>
+                </a>
+                <a href="https://www.apqc.org/knowledge-management" target="_blank" class="resource-card animate-on-scroll">
+                    <div class="resource-header"><div class="resource-icon">📊</div><span class="resource-type">Mejores Prácticas</span></div>
+                    <h3>APQC: Centro de Gestión del Conocimiento</h3>
+                    <p>Recursos, benchmarks y mejores prácticas para implementar sistemas efectivos de gestión del conocimiento organizacional.</p>
+                    <div class="resource-link">Descargar <span>→</span></div>
+                </a>
+            </div>
+
+            <!-- Tips interactivos -->
+            <div class="tips-section animate-on-scroll">
+                <h3>💡 Tips Prácticos para Aplicar ALFIN en tu Día a Día</h3>
+                <div class="tips-carousel">
+                    <div class="tips-track" id="tipsTrack">
+                        <div class="tip-card"><span class="tip-num">01</span><p>Antes de buscar, define claramente qué información necesitas y para qué la usarás</p></div>
+                        <div class="tip-card"><span class="tip-num">02</span><p>Evalúa siempre la fuente: ¿Quién es el autor? ¿Cuándo se publicó? ¿Cuál es su propósito?</p></div>
+                        <div class="tip-card"><span class="tip-num">03</span><p>Contrasta la información en al menos 3 fuentes independientes antes de considerarla válida</p></div>
+                        <div class="tip-card"><span class="tip-num">04</span><p>Documenta y organiza lo que aprendes en un sistema personal para consultas futuras</p></div>
+                        <div class="tip-card"><span class="tip-num">05</span><p>Comparte tu conocimiento con colegas y equipos para multiplicar el valor</p></div>
+                        <div class="tip-card"><span class="tip-num">06</span><p>Cita siempre tus fuentes correctamente para mantener la ética informacional</p></div>
+                    </div>
+                    <div class="tips-nav">
+                        <button class="tip-nav-btn" id="tipPrev">←</button>
+                        <div class="tips-dots" id="tipsDots"></div>
+                        <button class="tip-nav-btn" id="tipNext">→</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="resources-grid">
-          <div class="resource-card">
-            <div class="resource-icon">📖</div>
-            <h3>Estándares ACRL</h3>
-            <p>Marco de referencia de competencias informacionales.</p>
-            <a
-              href="https://www.ala.org/acrl/standards/ilframework"
-              target="_blank"
-              >Leer más →</a
-            >
-          </div>
-          <div class="resource-card">
-            <div class="resource-icon">🎓</div>
-            <h3>UNESCO MIL</h3>
-            <p>Programa global de alfabetización mediática e informacional.</p>
-            <a
-              href="https://www.unesco.org/en/media-information-literacy"
-              target="_blank"
-              >Explorar →</a
-            >
-          </div>
-          <div class="resource-card">
-            <div class="resource-icon">📊</div>
-            <h3>APQC Knowledge</h3>
-            <p>Mejores prácticas en gestión del conocimiento.</p>
-            <a href="https://www.apqc.org/knowledge-management" target="_blank"
-              >Descargar →</a
-            >
-          </div>
-          <div class="resource-card">
-            <div class="resource-icon">🔬</div>
-            <h3>IFLA Guidelines</h3>
-            <p>Directrices internacionales sobre ALFIN.</p>
-            <a href="https://www.ifla.org" target="_blank">Consultar →</a>
-          </div>
-        </div>
-        <div class="tips-section">
-          <h3>💡 Tips para aplicar ALFIN</h3>
-          <div class="tips-grid">
-            <div class="tip">
-              01 Evalúa siempre la fuente antes de usar cualquier información
-            </div>
-            <div class="tip">
-              02 Documenta y comparte lo que aprendes con tu equipo
-            </div>
-            <div class="tip">
-              03 Crea un sistema de organización personal para la información
-            </div>
-            <div class="tip">
-              04 Cita correctamente tus fuentes para mantener la ética
-              informacional
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
+    <!-- Cómo se hizo -->
     <section id="como-se-hizo" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Behind the scenes</span>
-          <h2 class="section-title">
-            Cómo se <span class="gradient-text">hizo</span>
-          </h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-step">
-            <span class="step-icon">🎨</span>
-            <h3>1. Diseño</h3>
-            <p>
-              Estructura siguiendo los requisitos de "Crea para Aprender".
-              Diseño moderno con glassmorphism y animaciones.
-            </p>
-            <div class="tags"><span>UI/UX</span><span>Wireframing</span></div>
-          </div>
-          <div class="process-step">
-            <span class="step-icon">💻</span>
-            <h3>2. Desarrollo</h3>
-            <p>
-              HTML5 semántico, CSS3 con variables y animaciones, JavaScript
-              vanilla para interactividad.
-            </p>
-            <div class="tags">
-              <span>HTML5</span><span>CSS3</span><span>JS</span>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label animate-on-scroll">🔧 Behind the Scenes</span>
+                <h2 class="section-title animate-on-scroll">Cómo se <span class="gradient-text">Creó</span> este Proyecto</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Documentación completa del proceso de creación de este minisitio web educativo sobre ALFIN
+                </p>
             </div>
-          </div>
-          <div class="process-step">
-            <span class="step-icon">📚</span>
-            <h3>3. Investigación</h3>
-            <p>
-              Conceptos de ALFIN basados en estándares ACRL, UNESCO e IFLA. Caso
-              de estudio ilustrativo.
-            </p>
-            <div class="tags"><span>ALFIN</span><span>Research</span></div>
-          </div>
-          <div class="process-step">
-            <span class="step-icon">🚀</span>
-            <h3>4. Publicación</h3>
-            <p>
-              Hospedado en GitHub Pages, servicio gratuito para sitios estáticos
-              con disponibilidad 24/7.
-            </p>
-            <div class="tags"><span>Git</span><span>GitHub Pages</span></div>
-          </div>
+
+            <div class="process-hero animate-on-scroll">
+                <img src="assets/process.png" alt="Proceso de desarrollo web">
+            </div>
+
+            <!-- Timeline del proceso -->
+            <div class="process-timeline">
+                <div class="process-step animate-on-scroll">
+                    <div class="step-header">
+                        <div class="step-icon-large">🎯</div>
+                        <div class="step-info">
+                            <span class="step-label">Fase 1</span>
+                            <h3>Análisis de Requisitos y Planificación</h3>
+                        </div>
+                    </div>
+                    <div class="step-body">
+                        <p>Se analizaron cuidadosamente los requisitos de la actividad académica "Crea para Aprender: La Ruta del Conocimiento" para definir el alcance y objetivos del proyecto:</p>
+                        <div class="step-details">
+                            <div class="detail-item"><strong>📌 Objetivo principal:</strong> Ilustrar de manera creativa cómo las competencias ALFIN impactan positivamente en la gestión del conocimiento organizacional</div>
+                            <div class="detail-item"><strong>📱 Formato elegido:</strong> Minisitio web interactivo y visualmente atractivo</div>
+                            <div class="detail-item"><strong>👥 Audiencia objetivo:</strong> Estudiantes, profesionales y cualquier persona interesada en mejorar sus competencias informacionales</div>
+                            <div class="detail-item"><strong>⏰ Tiempo de desarrollo:</strong> Diseño, desarrollo y publicación completados en un día</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-header">
+                        <div class="step-icon-large">🎨</div>
+                        <div class="step-info">
+                            <span class="step-label">Fase 2</span>
+                            <h3>Diseño Visual y Experiencia de Usuario</h3>
+                        </div>
+                    </div>
+                    <div class="step-body">
+                        <p>Se diseñó una interfaz moderna, elegante y femenina utilizando principios de diseño contemporáneo para crear una experiencia visual agradable:</p>
+                        <div class="design-showcase">
+                            <div class="design-item">
+                                <span class="design-icon">🌸</span>
+                                <span class="design-name">Paleta Femenina</span>
+                                <span class="design-desc">Colores suaves y elegantes</span>
+                            </div>
+                            <div class="design-item">
+                                <span class="design-icon">💎</span>
+                                <span class="design-name">Glassmorphism</span>
+                                <span class="design-desc">Efectos de cristal modernos</span>
+                            </div>
+                            <div class="design-item">
+                                <span class="design-icon">🌈</span>
+                                <span class="design-name">Gradientes Suaves</span>
+                                <span class="design-desc">Transiciones de color armónicas</span>
+                            </div>
+                            <div class="design-item">
+                                <span class="design-icon">✨</span>
+                                <span class="design-name">Micro-animaciones</span>
+                                <span class="design-desc">Interacciones fluidas y elegantes</span>
+                            </div>
+                        </div>
+                        <div class="color-palette">
+                            <span class="palette-title">🎨 Paleta de colores utilizada:</span>
+                            <div class="palette-colors">
+                                <div class="color-swatch" style="background: #e879a9"><span>#e879a9</span></div>
+                                <div class="color-swatch" style="background: #9b7ed9"><span>#9b7ed9</span></div>
+                                <div class="color-swatch" style="background: #7dd3c0"><span>#7dd3c0</span></div>
+                                <div class="color-swatch" style="background: #2d1b4e"><span>#2d1b4e</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-header">
+                        <div class="step-icon-large">💻</div>
+                        <div class="step-info">
+                            <span class="step-label">Fase 3</span>
+                            <h3>Desarrollo Frontend con Tecnologías Web</h3>
+                        </div>
+                    </div>
+                    <div class="step-body">
+                        <p>El sitio fue desarrollado desde cero utilizando tecnologías web estándar, sin depender de frameworks pesados, para garantizar rendimiento óptimo:</p>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <div class="tech-logo html">HTML5</div>
+                                <span class="tech-name">HTML5</span>
+                                <span class="tech-use">Estructura semántica y accesibilidad</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-logo css">CSS3</div>
+                                <span class="tech-name">CSS3</span>
+                                <span class="tech-use">Estilos, animaciones y diseño responsive</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-logo js">JS</div>
+                                <span class="tech-name">JavaScript</span>
+                                <span class="tech-use">Interactividad y efectos dinámicos</span>
+                            </div>
+                        </div>
+                        <div class="code-preview">
+                            <div class="code-header">
+                                <span class="code-dot red"></span>
+                                <span class="code-dot yellow"></span>
+                                <span class="code-dot green"></span>
+                                <span class="code-title">📁 Estructura del proyecto</span>
+                            </div>
+                            <pre><code>📁 alfin-ruta-conocimiento/
+├── 📄 index.html      <span class="comment">── Estructura HTML semántica</span>
+├── 📄 styles.css      <span class="comment">── Estilos CSS con animaciones</span>
+├── 📄 script.js       <span class="comment">── JavaScript para interactividad</span>
+└── 📁 assets/         <span class="comment">── Imágenes generadas con IA</span>
+    ├── 🖼️ hero.png         <span class="comment">── Imagen principal</span>
+    ├── 🖼️ search.png       <span class="comment">── Competencia buscar</span>
+    ├── 🖼️ evaluate.png     <span class="comment">── Competencia evaluar</span>
+    ├── 🖼️ share.png        <span class="comment">── Competencia compartir</span>
+    ├── 🖼️ learn.png        <span class="comment">── Aprendizaje continuo</span>
+    ├── 🖼️ success.png      <span class="comment">── Caso de éxito</span>
+    ├── 🖼️ resources.png    <span class="comment">── Sección recursos</span>
+    └── 🖼️ process.png      <span class="comment">── Proceso de desarrollo</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-header">
+                        <div class="step-icon-large">🤖</div>
+                        <div class="step-info">
+                            <span class="step-label">Fase 4</span>
+                            <h3>Generación de Imágenes con Inteligencia Artificial</h3>
+                        </div>
+                    </div>
+                    <div class="step-body">
+                        <p>Todas las imágenes del sitio fueron creadas utilizando <strong>inteligencia artificial generativa</strong>, lo que permitió obtener ilustraciones personalizadas y coherentes con el diseño femenino del proyecto:</p>
+                        <div class="ai-showcase">
+                            <div class="ai-item">
+                                <img src="assets/hero.png" alt="Hero Image" class="ai-image">
+                                <div class="ai-info">
+                                    <span class="ai-label">🏠 Hero Principal</span>
+                                    <span class="ai-prompt">Mujer profesional rodeada de conocimiento</span>
+                                </div>
+                            </div>
+                            <div class="ai-item">
+                                <img src="assets/search.png" alt="Búsqueda" class="ai-image">
+                                <div class="ai-info">
+                                    <span class="ai-label">🔍 Búsqueda</span>
+                                    <span class="ai-prompt">Lupa buscando información</span>
+                                </div>
+                            </div>
+                            <div class="ai-item">
+                                <img src="assets/success.png" alt="Éxito" class="ai-image">
+                                <div class="ai-info">
+                                    <span class="ai-label">🎯 Éxito</span>
+                                    <span class="ai-prompt">Equipo celebrando logros</span>
+                                </div>
+                            </div>
+                            <div class="ai-item">
+                                <img src="assets/process.png" alt="Desarrollo" class="ai-image">
+                                <div class="ai-info">
+                                    <span class="ai-label">💻 Desarrollo</span>
+                                    <span class="ai-prompt">Proceso creativo de desarrollo web</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ai-note">
+                            <span class="note-icon">💡</span>
+                            <span>Las imágenes fueron generadas con IA utilizando prompts específicos para mantener coherencia visual con la paleta de colores femenina del proyecto</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-header">
+                        <div class="step-icon-large">📚</div>
+                        <div class="step-info">
+                            <span class="step-label">Fase 5</span>
+                            <h3>Investigación y Desarrollo de Contenido</h3>
+                        </div>
+                    </div>
+                    <div class="step-body">
+                        <p>El contenido fue desarrollado basándose en fuentes académicas reconocidas internacionalmente para garantizar la calidad y veracidad de la información:</p>
+                        <div class="sources-list">
+                            <div class="source-item">
+                                <span class="source-icon">📖</span>
+                                <div class="source-info">
+                                    <strong>Framework for Information Literacy for Higher Education</strong>
+                                    <span>Association of College & Research Libraries (ACRL), 2016</span>
+                                </div>
+                            </div>
+                            <div class="source-item">
+                                <span class="source-icon">🌐</span>
+                                <div class="source-info">
+                                    <strong>Media and Information Literacy Curriculum for Teachers</strong>
+                                    <span>UNESCO, 2021 - Programa mundial de alfabetización</span>
+                                </div>
+                            </div>
+                            <div class="source-item">
+                                <span class="source-icon">📊</span>
+                                <div class="source-info">
+                                    <strong>Knowledge Management Best Practices & Benchmarks</strong>
+                                    <span>APQC (American Productivity & Quality Center), 2023</span>
+                                </div>
+                            </div>
+                            <div class="source-item">
+                                <span class="source-icon">🔬</span>
+                                <div class="source-info">
+                                    <strong>Guidelines on Information Literacy for Lifelong Learning</strong>
+                                    <span>IFLA (International Federation of Library Associations), 2020</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step animate-on-scroll">
+                    <div class="step-header">
+                        <div class="step-icon-large">🚀</div>
+                        <div class="step-info">
+                            <span class="step-label">Fase 6</span>
+                            <h3>Publicación y Hosting en la Nube</h3>
+                        </div>
+                    </div>
+                    <div class="step-body">
+                        <p>El sitio fue publicado utilizando <strong>GitHub Pages</strong>, un servicio gratuito y confiable para hosting de sitios web estáticos con disponibilidad 24/7:</p>
+                        <div class="deploy-steps">
+                            <div class="deploy-item"><span class="deploy-num">1</span><span>Inicialización del repositorio Git local</span></div>
+                            <div class="deploy-item"><span class="deploy-num">2</span><span>Commit de todos los archivos del proyecto</span></div>
+                            <div class="deploy-item"><span class="deploy-num">3</span><span>Creación del repositorio en GitHub</span></div>
+                            <div class="deploy-item"><span class="deploy-num">4</span><span>Push del código al repositorio remoto</span></div>
+                            <div class="deploy-item"><span class="deploy-num">5</span><span>Activación de GitHub Pages en configuración</span></div>
+                            <div class="deploy-item"><span class="deploy-num">6</span><span>¡Sitio en vivo con URL pública!</span></div>
+                        </div>
+                        <div class="live-url">
+                            <span class="url-label">🌐 URL del sitio publicado:</span>
+                            <a href="https://diegomera12.github.io/alfin-ruta-conocimiento/" target="_blank" class="url-link">
+                                https://diegomera12.github.io/alfin-ruta-conocimiento/
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Final -->
+            <div class="tech-stack-final animate-on-scroll">
+                <h3>🛠️ Stack Tecnológico Completo del Proyecto</h3>
+                <div class="stack-grid">
+                    <div class="stack-item"><span class="stack-icon">📄</span><span>HTML5</span></div>
+                    <div class="stack-item"><span class="stack-icon">🎨</span><span>CSS3</span></div>
+                    <div class="stack-item"><span class="stack-icon">⚡</span><span>JavaScript ES6+</span></div>
+                    <div class="stack-item"><span class="stack-icon">🔤</span><span>Google Fonts</span></div>
+                    <div class="stack-item"><span class="stack-icon">🤖</span><span>IA Generativa</span></div>
+                    <div class="stack-item"><span class="stack-icon">🐙</span><span>GitHub Pages</span></div>
+                </div>
+            </div>
+
+            <!-- Créditos -->
+            <div class="credits-section animate-on-scroll">
+                <div class="credits-card">
+                    <div class="credits-header">
+                        <span class="credits-icon">👩‍🎓</span>
+                        <h3>Créditos del Proyecto</h3>
+                    </div>
+                    <div class="credits-body">
+                        <div class="credit-row main">
+                            <span class="credit-label">Creado por:</span>
+                            <span class="credit-value highlight">Vélez Sánchez Lady Liliana</span>
+                        </div>
+                        <div class="credits-grid">
+                            <div class="credit-row">
+                                <span class="credit-label">Actividad académica:</span>
+                                <span class="credit-value">Crea para Aprender: La Ruta del Conocimiento</span>
+                            </div>
+                            <div class="credit-row">
+                                <span class="credit-label">Materia:</span>
+                                <span class="credit-value">Alfabetización Informacional (ALFIN)</span>
+                            </div>
+                            <div class="credit-row">
+                                <span class="credit-label">Formato de entrega:</span>
+                                <span class="credit-value">Minisitio Web Interactivo</span>
+                            </div>
+                            <div class="credit-row">
+                                <span class="credit-label">Fecha de creación:</span>
+                                <span class="credit-value">Diciembre 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="credits-footer">
+                        <p>Este proyecto demuestra la aplicación práctica de competencias ALFIN en la creación de contenido digital educativo de calidad.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="tech-stack">
-          <h3>🛠️ Stack Tecnológico</h3>
-          <div class="stack-items">
-            <span>HTML5</span><span>CSS3</span><span>JavaScript</span
-            ><span>GitHub Pages</span><span>Google Fonts</span>
-          </div>
-        </div>
-        <div class="credits">
-          <h3>👥 Créditos</h3>
-          <p>
-            Proyecto académico "Crea para Aprender: La Ruta del Conocimiento"
-          </p>
-          <p>
-            <strong>Materia:</strong> Alfabetización Informacional |
-            <strong>Formato:</strong> Minisitio Web
-          </p>
-        </div>
-      </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand"><span>📚</span><span>ALFIN</span></div>
-          <p>Proyecto educativo sobre Alfabetización Informacional</p>
-          <div class="footer-links">
-            <a href="#inicio">Inicio</a><a href="#que-es">¿Qué es ALFIN?</a
-            ><a href="#caso">Caso</a><a href="#recursos">Recursos</a>
-          </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📚</span>
+                    <span class="logo-text">ALFIN</span>
+                </div>
+                <p class="footer-text">
+                    Proyecto educativo sobre Alfabetización Informacional y Gestión del Conocimiento
+                </p>
+                <div class="footer-author">
+                    Creado con 💖 por <strong>Vélez Sánchez Lady Liliana</strong>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio">🏠 Inicio</a>
+                    <a href="#que-es">📖 ¿Qué es ALFIN?</a>
+                    <a href="#caso">📊 Caso de Estudio</a>
+                    <a href="#recursos">📚 Recursos</a>
+                    <a href="#como-se-hizo">🔧 Cómo se hizo</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 - Proyecto Académico ALFIN | Hecho con 💖 para aprender</p>
+            </div>
         </div>
-        <p class="footer-bottom">
-          © 2024 - Proyecto Académico ALFIN | Hecho con 💙
-        </p>
-      </div>
     </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>

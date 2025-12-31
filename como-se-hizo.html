@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo se hizo - ALFIN</title>
+    <meta name="description" content="Proceso de creación del proyecto educativo ALFIN">
+    <meta name="author" content="Vélez Sánchez Lady Liliana">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { primary: '#ec4899', secondary: '#8b5cf6', accent: '#06b6d4' } } }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        code, pre { font-family: 'Fira Code', monospace; }
+        .gradient-text { background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-bg { background: linear-gradient(135deg, #fdf2f8, #faf5ff, #ecfeff); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #ec4899, #8b5cf6); transition: width 0.3s; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">A</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">ALFIN</span>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Inicio</a>
+                    <a href="alfin.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Caso de Estudio</a>
+                    <a href="recursos.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Recursos</a>
+                    <a href="como-se-hizo.html" class="nav-link active text-pink-500 font-medium">Cómo se hizo</a>
+                </div>
+
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-pink-500">Inicio</a>
+                    <a href="alfin.html" class="text-gray-700 font-medium hover:text-pink-500">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="text-gray-700 font-medium hover:text-pink-500">Caso de Estudio</a>
+                    <a href="recursos.html" class="text-gray-700 font-medium hover:text-pink-500">Recursos</a>
+                    <a href="como-se-hizo.html" class="text-pink-500 font-medium">Cómo se hizo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <span class="inline-block px-4 py-2 bg-amber-100 text-amber-600 rounded-full text-sm font-semibold mb-4">Behind the Scenes</span>
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                        Cómo se <span class="gradient-text">Creó</span> este Proyecto
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Documentación completa del proceso de desarrollo de este minisitio web 
+                        educativo sobre Alfabetización Informacional.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="assets/process.png" alt="Proceso de desarrollo" class="rounded-3xl shadow-2xl w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Info -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-3xl p-8 text-white" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">📚</div>
+                        <div class="font-bold">Proyecto</div>
+                        <div class="text-white/80 text-sm">Crea para Aprender: La Ruta del Conocimiento</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">👩‍🎓</div>
+                        <div class="font-bold">Autora</div>
+                        <div class="text-white/80 text-sm">Vélez Sánchez Lady Liliana</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">📅</div>
+                        <div class="font-bold">Fecha</div>
+                        <div class="text-white/80 text-sm">Diciembre 2024</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">🌐</div>
+                        <div class="font-bold">Formato</div>
+                        <div class="text-white/80 text-sm">Minisitio Web Interactivo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 1: Planning -->
+    <section class="py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-start gap-6" data-aos="fade-up">
+                <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        1
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <span class="inline-block px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-xs font-semibold mb-2">Fase 1</span>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Análisis de Requisitos y Planificación</h2>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                        <p class="text-gray-600 mb-6">
+                            Se analizaron los requisitos de la actividad académica <strong>"Crea para Aprender: La Ruta del Conocimiento"</strong> 
+                            para definir el alcance y objetivos del proyecto educativo.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-xl">🎯</span>
+                                    <span class="font-semibold text-gray-800">Objetivo Principal</span>
+                                </div>
+                                <p class="text-gray-600 text-sm">Ilustrar cómo las competencias ALFIN impactan en la gestión del conocimiento organizacional</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-xl">📱</span>
+                                    <span class="font-semibold text-gray-800">Formato Elegido</span>
+                                </div>
+                                <p class="text-gray-600 text-sm">Minisitio web multipágina, interactivo y visualmente atractivo</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-xl">👥</span>
+                                    <span class="font-semibold text-gray-800">Audiencia</span>
+                                </div>
+                                <p class="text-gray-600 text-sm">Estudiantes, profesionales y personas interesadas en mejorar competencias informacionales</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="text-xl">⏰</span>
+                                    <span class="font-semibold text-gray-800">Tiempo de Desarrollo</span>
+                                </div>
+                                <p class="text-gray-600 text-sm">Diseño, desarrollo y publicación completados con ayuda de herramientas de IA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 2: Design -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-start gap-6" data-aos="fade-up">
+                <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        2
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <span class="inline-block px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-semibold mb-2">Fase 2</span>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Diseño Visual y Experiencia de Usuario</h2>
+                    
+                    <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 shadow-lg mb-6">
+                        <p class="text-gray-600 mb-6">
+                            Se diseñó una interfaz moderna, clara y profesional utilizando principios de diseño contemporáneo 
+                            con un tema <strong>claro (light theme)</strong> para mejor legibilidad.
+                        </p>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Principios de Diseño Aplicados</h3>
+                        <div class="grid md:grid-cols-4 gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-3xl mb-2">🌸</div>
+                                <div class="font-semibold text-gray-800 text-sm">Tema Claro</div>
+                                <div class="text-gray-500 text-xs">Fondo suave, legible</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-3xl mb-2">💎</div>
+                                <div class="font-semibold text-gray-800 text-sm">Glassmorphism</div>
+                                <div class="text-gray-500 text-xs">Efectos modernos</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-3xl mb-2">🌈</div>
+                                <div class="font-semibold text-gray-800 text-sm">Gradientes</div>
+                                <div class="text-gray-500 text-xs">Transiciones elegantes</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                                <div class="text-3xl mb-2">✨</div>
+                                <div class="font-semibold text-gray-800 text-sm">Animaciones</div>
+                                <div class="text-gray-500 text-xs">Interacciones fluidas</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Paleta de Colores</h3>
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-20 rounded-2xl shadow-lg" style="background: #ec4899"></div>
+                                <span class="text-xs text-gray-600 mt-2 font-mono">#ec4899</span>
+                                <span class="text-xs text-gray-500">Pink</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-20 rounded-2xl shadow-lg" style="background: #8b5cf6"></div>
+                                <span class="text-xs text-gray-600 mt-2 font-mono">#8b5cf6</span>
+                                <span class="text-xs text-gray-500">Purple</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-20 rounded-2xl shadow-lg" style="background: #06b6d4"></div>
+                                <span class="text-xs text-gray-600 mt-2 font-mono">#06b6d4</span>
+                                <span class="text-xs text-gray-500">Cyan</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-20 rounded-2xl shadow-lg" style="background: #1f2937"></div>
+                                <span class="text-xs text-gray-600 mt-2 font-mono">#1f2937</span>
+                                <span class="text-xs text-gray-500">Dark</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-20 h-20 rounded-2xl shadow-lg border border-gray-200" style="background: #fdf2f8"></div>
+                                <span class="text-xs text-gray-600 mt-2 font-mono">#fdf2f8</span>
+                                <span class="text-xs text-gray-500">Background</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 3: Development -->
+    <section class="py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-start gap-6" data-aos="fade-up">
+                <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        3
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-xs font-semibold mb-2">Fase 3</span>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Desarrollo con Tecnologías Web Modernas</h2>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                        <p class="text-gray-600 mb-6">
+                            El sitio fue desarrollado utilizando tecnologías web modernas y librerías establecidas 
+                            para garantizar un diseño profesional y consistente.
+                        </p>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Stack Tecnológico</h3>
+                        <div class="grid md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
+                                    HTML
+                                </div>
+                                <div class="font-bold text-gray-800">HTML5</div>
+                                <div class="text-gray-600 text-sm">Estructura semántica y accesible</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-3">
+                                    TW
+                                </div>
+                                <div class="font-bold text-gray-800">TailwindCSS</div>
+                                <div class="text-gray-600 text-sm">Framework CSS utility-first</div>
+                            </div>
+                            <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 text-center">
+                                <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-xl flex items-center justify-center text-gray-900 font-bold text-xl mx-auto mb-3">
+                                    JS
+                                </div>
+                                <div class="font-bold text-gray-800">JavaScript</div>
+                                <div class="text-gray-600 text-sm">Interactividad y animaciones</div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Librerías Utilizadas</h3>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center text-xl">🎨</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">TailwindCSS CDN</div>
+                                    <div class="text-gray-600 text-sm">Estilos rápidos y consistentes</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-xl">✨</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">AOS (Animate on Scroll)</div>
+                                    <div class="text-gray-600 text-sm">Animaciones al hacer scroll</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center text-xl">🔤</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Google Fonts (Poppins)</div>
+                                    <div class="text-gray-600 text-sm">Tipografía moderna y legible</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 bg-gray-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-xl">📝</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Fira Code</div>
+                                    <div class="text-gray-600 text-sm">Tipografía para código</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Estructura del Proyecto</h3>
+                        <div class="bg-gray-900 rounded-xl p-6 overflow-x-auto">
+                            <pre class="text-green-400 text-sm"><code>📁 alfin-ruta-conocimiento/
+├── 📄 index.html           ── Página de inicio
+├── 📄 alfin.html           ── ¿Qué es ALFIN?
+├── 📄 caso.html            ── Caso de estudio
+├── 📄 recursos.html        ── Recursos y tips
+├── 📄 como-se-hizo.html    ── Esta página
+└── 📁 assets/              ── Imágenes generadas con IA
+    ├── 🖼️ hero.png
+    ├── 🖼️ search.png
+    ├── 🖼️ evaluate.png
+    ├── 🖼️ share.png
+    ├── 🖼️ learn.png
+    ├── 🖼️ success.png
+    ├── 🖼️ resources.png
+    └── 🖼️ process.png</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 4: AI Images -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-start gap-6" data-aos="fade-up">
+                <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        4
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <span class="inline-block px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-xs font-semibold mb-2">Fase 4</span>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Generación de Imágenes con Inteligencia Artificial</h2>
+                    
+                    <div class="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-6 shadow-lg mb-6">
+                        <p class="text-gray-600 mb-6">
+                            Todas las imágenes del sitio fueron creadas utilizando <strong>inteligencia artificial generativa</strong>, 
+                            permitiendo obtener ilustraciones personalizadas y coherentes con el diseño visual del proyecto.
+                        </p>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Galería de Imágenes Generadas</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/hero.png" alt="Hero" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Hero Principal</div>
+                                    <div class="text-gray-500 text-xs">Conocimiento</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/search.png" alt="Búsqueda" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Búsqueda</div>
+                                    <div class="text-gray-500 text-xs">Localizar info</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/evaluate.png" alt="Evaluar" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Evaluar</div>
+                                    <div class="text-gray-500 text-xs">Análisis crítico</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/share.png" alt="Compartir" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Compartir</div>
+                                    <div class="text-gray-500 text-xs">Colaboración</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/learn.png" alt="Aprender" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Aprender</div>
+                                    <div class="text-gray-500 text-xs">Crecimiento</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/success.png" alt="Éxito" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Éxito</div>
+                                    <div class="text-gray-500 text-xs">Caso de estudio</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/resources.png" alt="Recursos" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Recursos</div>
+                                    <div class="text-gray-500 text-xs">Materiales</div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl overflow-hidden shadow-sm">
+                                <img src="assets/process.png" alt="Proceso" class="w-full h-32 object-cover">
+                                <div class="p-3">
+                                    <div class="font-semibold text-gray-800 text-sm">Proceso</div>
+                                    <div class="text-gray-500 text-xs">Desarrollo</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl p-4 flex items-start gap-3">
+                            <span class="text-2xl">💡</span>
+                            <p class="text-gray-600 text-sm">
+                                Las imágenes fueron generadas con IA utilizando prompts específicos que describen escenas 3D 
+                                con colores pasteles suaves (rosa, lavanda, menta) para mantener coherencia visual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 5: Research -->
+    <section class="py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-start gap-6" data-aos="fade-up">
+                <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        5
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <span class="inline-block px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-xs font-semibold mb-2">Fase 5</span>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Investigación y Desarrollo de Contenido</h2>
+                    
+                    <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                        <p class="text-gray-600 mb-6">
+                            El contenido fue desarrollado basándose en fuentes académicas reconocidas internacionalmente 
+                            para garantizar la calidad y veracidad de la información presentada.
+                        </p>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Fuentes Consultadas</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">📖</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Framework for Information Literacy for Higher Education</div>
+                                    <div class="text-gray-600 text-sm">Association of College & Research Libraries (ACRL), 2016</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">🌐</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Media and Information Literacy Curriculum for Teachers</div>
+                                    <div class="text-gray-600 text-sm">UNESCO, 2021 - Programa mundial de alfabetización</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">📊</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Knowledge Management Best Practices & Benchmarks</div>
+                                    <div class="text-gray-600 text-sm">APQC (American Productivity & Quality Center), 2023</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gradient-to-r from-purple-50 to-violet-50 rounded-xl p-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-xl flex-shrink-0">🔬</div>
+                                <div>
+                                    <div class="font-semibold text-gray-800">Guidelines on Information Literacy for Lifelong Learning</div>
+                                    <div class="text-gray-600 text-sm">IFLA (International Federation of Library Associations), 2020</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 6: Deployment -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex items-start gap-6" data-aos="fade-up">
+                <div class="flex-shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                        6
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-semibold mb-2">Fase 6</span>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Publicación y Hosting en la Nube</h2>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-lg mb-6">
+                        <p class="text-gray-600 mb-6">
+                            El sitio fue publicado utilizando <strong>GitHub Pages</strong>, un servicio gratuito y confiable 
+                            para hosting de sitios web estáticos con disponibilidad 24/7.
+                        </p>
+                        
+                        <h3 class="font-bold text-gray-800 mb-4">Proceso de Despliegue</h3>
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
+                                <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">1</div>
+                                <span class="text-gray-700 text-sm">Inicializar Git</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
+                                <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">2</div>
+                                <span class="text-gray-700 text-sm">Commit archivos</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
+                                <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">3</div>
+                                <span class="text-gray-700 text-sm">Crear repo GitHub</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
+                                <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">4</div>
+                                <span class="text-gray-700 text-sm">Push código</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
+                                <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">5</div>
+                                <span class="text-gray-700 text-sm">Activar Pages</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
+                                <div class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold">6</div>
+                                <span class="text-gray-700 text-sm">¡En vivo!</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl p-6 text-center text-white">
+                            <div class="text-sm font-medium mb-2 opacity-80">🌐 URL del Sitio Publicado</div>
+                            <a href="https://diegomera12.github.io/alfin-ruta-conocimiento/" target="_blank" class="text-xl font-bold hover:underline">
+                                diegomera12.github.io/alfin-ruta-conocimiento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credits -->
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-3xl p-10 text-white text-center">
+                <div class="text-5xl mb-4">👩‍🎓</div>
+                <h2 class="text-2xl font-bold mb-2">Créditos del Proyecto</h2>
+                <div class="text-3xl font-bold mb-4">Vélez Sánchez Lady Liliana</div>
+                <div class="space-y-2 text-white/80">
+                    <p>Actividad: Crea para Aprender - La Ruta del Conocimiento</p>
+                    <p>Materia: Alfabetización Informacional (ALFIN)</p>
+                    <p>Formato: Minisitio Web Multipágina Interactivo</p>
+                    <p>Fecha: Diciembre 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">© 2024 Proyecto Académico ALFIN</p>
+                <p class="text-gray-400 text-sm">Creado por <span class="text-pink-400 font-semibold">Vélez Sánchez Lady Liliana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

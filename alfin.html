@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es ALFIN? - La Ruta del Conocimiento</title>
+    <meta name="description" content="Conoce las 6 competencias clave de la Alfabetización Informacional">
+    <meta name="author" content="Vélez Sánchez Lady Liliana">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ec4899',
+                        secondary: '#8b5cf6',
+                        accent: '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-bg { background: linear-gradient(135deg, #fdf2f8, #faf5ff, #ecfeff); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #ec4899, #8b5cf6); transition: width 0.3s; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .tab-btn.active { background: linear-gradient(135deg, #ec4899, #8b5cf6); color: white; }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">A</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">ALFIN</span>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Inicio</a>
+                    <a href="alfin.html" class="nav-link active text-pink-500 font-medium">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Caso de Estudio</a>
+                    <a href="recursos.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Recursos</a>
+                    <a href="como-se-hizo.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Cómo se hizo</a>
+                </div>
+
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-pink-500">Inicio</a>
+                    <a href="alfin.html" class="text-pink-500 font-medium">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="text-gray-700 font-medium hover:text-pink-500">Caso de Estudio</a>
+                    <a href="recursos.html" class="text-gray-700 font-medium hover:text-pink-500">Recursos</a>
+                    <a href="como-se-hizo.html" class="text-gray-700 font-medium hover:text-pink-500">Cómo se hizo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm font-semibold mb-4">Fundamentos</span>
+                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                    ¿Qué es <span class="gradient-text">ALFIN</span>?
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    La <strong>Alfabetización Informacional</strong> (ALFIN) es el conjunto de competencias que permite 
+                    reconocer cuándo se necesita información, dónde localizarla, cómo evaluarla y utilizarla 
+                    de manera ética y efectiva.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Image -->
+    <section class="pb-16 px-6">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+            <img src="assets/search.png" alt="Búsqueda de Información" class="w-full max-w-md mx-auto rounded-3xl shadow-2xl">
+        </div>
+    </section>
+
+    <!-- Competencias -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">Las 6 Competencias</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">Competencias ALFIN</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Haz clic en cada competencia para conocer más detalles</p>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8" data-aos="fade-up">
+                <button class="tab-btn active px-6 py-3 rounded-full font-medium transition border-2 border-pink-200 hover:border-pink-400" data-tab="identificar">🎯 Identificar</button>
+                <button class="tab-btn px-6 py-3 rounded-full font-medium transition border-2 border-pink-200 hover:border-pink-400 bg-white text-gray-700" data-tab="localizar">🔍 Localizar</button>
+                <button class="tab-btn px-6 py-3 rounded-full font-medium transition border-2 border-pink-200 hover:border-pink-400 bg-white text-gray-700" data-tab="evaluar">⚖️ Evaluar</button>
+                <button class="tab-btn px-6 py-3 rounded-full font-medium transition border-2 border-pink-200 hover:border-pink-400 bg-white text-gray-700" data-tab="usar">🔧 Usar</button>
+                <button class="tab-btn px-6 py-3 rounded-full font-medium transition border-2 border-pink-200 hover:border-pink-400 bg-white text-gray-700" data-tab="comunicar">💬 Comunicar</button>
+                <button class="tab-btn px-6 py-3 rounded-full font-medium transition border-2 border-pink-200 hover:border-pink-400 bg-white text-gray-700" data-tab="aprender">📈 Aprender</button>
+            </div>
+            
+            <!-- Tab Contents -->
+            <div class="max-w-4xl mx-auto">
+                <div id="identificar" class="tab-content bg-gradient-to-br from-pink-50 to-purple-50 rounded-3xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="text-5xl mb-4">🎯</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Identificar Necesidades de Información</h3>
+                            <p class="text-gray-600 mb-6">
+                                Es la capacidad de reconocer cuándo se necesita información y definir claramente 
+                                qué tipo de información se requiere para resolver un problema o tomar una decisión.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Formular preguntas de investigación claras
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Determinar el alcance de la información necesaria
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Identificar fuentes potenciales más adecuadas
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Establecer criterios para delimitar la búsqueda
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="assets/search.png" alt="Identificar" class="rounded-2xl shadow-lg w-full max-w-sm mx-auto">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="localizar" class="tab-content hidden bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="text-5xl mb-4">🔍</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Localizar y Acceder a la Información</h3>
+                            <p class="text-gray-600 mb-6">
+                                Implica saber dónde y cómo buscar información utilizando diversas fuentes 
+                                y herramientas de manera eficiente y sistemática.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Utilizar bases de datos académicas
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Aplicar operadores booleanos
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Acceder a fuentes primarias y secundarias
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Navegar repositorios digitales
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="assets/search.png" alt="Localizar" class="rounded-2xl shadow-lg w-full max-w-sm mx-auto">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="evaluar" class="tab-content hidden bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="text-5xl mb-4">⚖️</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Evaluar Críticamente la Información</h3>
+                            <p class="text-gray-600 mb-6">
+                                Consiste en analizar la calidad, relevancia, confiabilidad y veracidad 
+                                de la información encontrada antes de utilizarla.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Verificar autoridad y credenciales del autor
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Detectar sesgos y desinformación
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Comparar múltiples fuentes
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Evaluar actualidad de los datos
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="assets/evaluate.png" alt="Evaluar" class="rounded-2xl shadow-lg w-full max-w-sm mx-auto">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="usar" class="tab-content hidden bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="text-5xl mb-4">🔧</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Usar Éticamente la Información</h3>
+                            <p class="text-gray-600 mb-6">
+                                Aplicar la información de manera ética y responsable, respetando 
+                                derechos de autor y citando fuentes correctamente.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Respetar propiedad intelectual
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Citar correctamente (APA, MLA)
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Evitar el plagio
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Reconocer contribuciones de otros
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="assets/learn.png" alt="Usar" class="rounded-2xl shadow-lg w-full max-w-sm mx-auto">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="comunicar" class="tab-content hidden bg-gradient-to-br from-violet-50 to-purple-50 rounded-3xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="text-5xl mb-4">💬</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Comunicar Efectivamente</h3>
+                            <p class="text-gray-600 mb-6">
+                                Compartir conocimiento de forma clara, organizada y adaptada 
+                                al público objetivo y contexto específico.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-violet-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Sintetizar información compleja
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-violet-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Adaptar mensaje según audiencia
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-violet-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Utilizar diversos formatos
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-violet-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Presentar argumentos lógicos
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="assets/share.png" alt="Comunicar" class="rounded-2xl shadow-lg w-full max-w-sm mx-auto">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="aprender" class="tab-content hidden bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-8 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="text-5xl mb-4">📈</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Aprendizaje Continuo</h3>
+                            <p class="text-gray-600 mb-6">
+                                Desarrollar habilidades de aprendizaje autónomo y actualización 
+                                constante del conocimiento a lo largo de la vida.
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-rose-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Mantenerse actualizado
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-rose-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Desarrollar pensamiento crítico
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-rose-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Adaptarse a nuevas herramientas
+                                </li>
+                                <li class="flex items-center gap-3 text-gray-700">
+                                    <span class="w-6 h-6 bg-rose-500 text-white rounded-full flex items-center justify-center text-sm">✓</span>
+                                    Reflexionar sobre el aprendizaje
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="assets/learn.png" alt="Aprender" class="rounded-2xl shadow-lg w-full max-w-sm mx-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALFIN y Gestión del Conocimiento -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden" data-aos="fade-up">
+                <div class="grid lg:grid-cols-2">
+                    <div class="p-10">
+                        <span class="inline-block px-4 py-2 bg-cyan-100 text-cyan-600 rounded-full text-sm font-semibold mb-4">Conexión Estratégica</span>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">ALFIN + Gestión del Conocimiento</h2>
+                        <p class="text-gray-600 mb-8">
+                            La gestión del conocimiento organizacional se potencia significativamente 
+                            cuando los colaboradores poseen competencias ALFIN desarrolladas.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">📊</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Toma de decisiones</h4>
+                                    <p class="text-sm text-gray-600">Basada en información confiable y verificada</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">🧹</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Reducción de sobrecarga</h4>
+                                    <p class="text-sm text-gray-600">Menos tiempo buscando, más tiempo aplicando</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
+                                <div class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center">💡</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Mayor innovación</h4>
+                                    <p class="text-sm text-gray-600">Creatividad impulsada por conocimiento sólido</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-pink-100 to-purple-100 p-10 flex items-center justify-center">
+                        <div class="text-center">
+                            <h3 class="text-xl font-bold text-gray-800 mb-6">Ciclo de Gestión del Conocimiento</h3>
+                            <div class="relative w-64 h-64 mx-auto">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-24 h-24 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                                        GC
+                                    </div>
+                                </div>
+                                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 bg-white px-4 py-2 rounded-full shadow-lg text-sm font-medium">📥 Capturar</div>
+                                <div class="absolute top-1/2 right-0 translate-x-2 -translate-y-1/2 bg-white px-4 py-2 rounded-full shadow-lg text-sm font-medium">🗂️ Organizar</div>
+                                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 bg-white px-4 py-2 rounded-full shadow-lg text-sm font-medium">🔄 Compartir</div>
+                                <div class="absolute top-1/2 left-0 -translate-x-2 -translate-y-1/2 bg-white px-4 py-2 rounded-full shadow-lg text-sm font-medium">🚀 Aplicar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">¿Quieres ver ALFIN en acción?</h2>
+            <p class="text-gray-600 mb-8">Descubre cómo una empresa transformó su gestión del conocimiento con competencias ALFIN</p>
+            <a href="caso.html" class="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                Ver Caso de Estudio →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">A</span>
+                        </div>
+                        <span class="text-xl font-bold">ALFIN</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Proyecto educativo sobre Alfabetización Informacional.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Navegación</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-400 hover:text-white transition text-sm">Inicio</a>
+                        <a href="alfin.html" class="block text-gray-400 hover:text-white transition text-sm">¿Qué es ALFIN?</a>
+                        <a href="caso.html" class="block text-gray-400 hover:text-white transition text-sm">Caso de Estudio</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Recursos</h4>
+                    <div class="space-y-2">
+                        <a href="recursos.html" class="block text-gray-400 hover:text-white transition text-sm">Guías y Artículos</a>
+                        <a href="como-se-hizo.html" class="block text-gray-400 hover:text-white transition text-sm">Cómo se hizo</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Proyecto</h4>
+                    <p class="text-gray-400 text-sm mb-2">Crea para Aprender</p>
+                    <p class="text-gray-400 text-sm">Diciembre 2024</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">© 2024 Proyecto Académico ALFIN</p>
+                <p class="text-gray-400 text-sm">Creado por <span class="text-pink-400 font-semibold">Vélez Sánchez Lady Liliana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        
+        // Tabs
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('bg-white', 'text-gray-700');
+                });
+                this.classList.add('active');
+                this.classList.remove('bg-white', 'text-gray-700');
+                
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+                document.getElementById(this.dataset.tab).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

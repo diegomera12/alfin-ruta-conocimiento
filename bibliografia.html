@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliografía - ALFIN</title>
+    <meta name="description" content="Referencias bibliográficas completas sobre Alfabetización Informacional">
+    <meta name="author" content="Vélez Sánchez Lady Liliana">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { primary: '#ec4899', secondary: '#8b5cf6', accent: '#06b6d4' } } }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-bg { background: linear-gradient(135deg, #fdf2f8, #faf5ff, #ecfeff); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #ec4899, #8b5cf6); transition: width 0.3s; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .ref-item { padding-left: 2rem; text-indent: -2rem; }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">A</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">ALFIN</span>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Inicio</a>
+                    <a href="alfin.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Casos de Estudio</a>
+                    <a href="recursos.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Recursos</a>
+                    <a href="timeline.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Línea del Tiempo</a>
+                    <a href="como-se-hizo.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Cómo se hizo</a>
+                </div>
+
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-pink-500">Inicio</a>
+                    <a href="alfin.html" class="text-gray-700 font-medium hover:text-pink-500">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="text-gray-700 font-medium hover:text-pink-500">Casos de Estudio</a>
+                    <a href="recursos.html" class="text-gray-700 font-medium hover:text-pink-500">Recursos</a>
+                    <a href="timeline.html" class="text-gray-700 font-medium hover:text-pink-500">Línea del Tiempo</a>
+                    <a href="como-se-hizo.html" class="text-gray-700 font-medium hover:text-pink-500">Cómo se hizo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 bg-amber-100 text-amber-600 rounded-full text-sm font-semibold mb-4">Referencias Académicas</span>
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                <span class="gradient-text">Bibliografía</span> Completa
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                Referencias bibliográficas en formato APA 7ª edición utilizadas para el desarrollo 
+                de este proyecto educativo sobre Alfabetización Informacional.
+            </p>
+        </div>
+    </section>
+
+    <!-- Bibliography Sections -->
+    <section class="py-16 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            
+            <!-- Fuentes Primarias -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 mb-8" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center text-white text-2xl">
+                        📚
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Fuentes Primarias</h2>
+                        <p class="text-gray-600">Documentos fundacionales y estándares oficiales</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 text-gray-700">
+                    <p class="ref-item">
+                        American Library Association. (1989). <em>Presidential Committee on Information Literacy: Final Report</em>. 
+                        American Library Association. <a href="https://www.ala.org/acrl/publications/whitepapers/presidential" target="_blank" class="text-pink-500 hover:underline">https://www.ala.org/acrl/publications/whitepapers/presidential</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Association of College & Research Libraries. (2000). <em>Information Literacy Competency Standards for Higher Education</em>. 
+                        American Library Association. <a href="https://alair.ala.org/handle/11213/7668" target="_blank" class="text-pink-500 hover:underline">https://alair.ala.org/handle/11213/7668</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Association of College & Research Libraries. (2016). <em>Framework for Information Literacy for Higher Education</em>. 
+                        American Library Association. <a href="https://www.ala.org/acrl/standards/ilframework" target="_blank" class="text-pink-500 hover:underline">https://www.ala.org/acrl/standards/ilframework</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        International Federation of Library Associations and Institutions. (2006). <em>Guidelines on Information Literacy for Lifelong Learning</em> (A. Lau, Ed.). 
+                        IFLA. <a href="https://www.ifla.org/publications/guidelines-on-information-literacy-for-lifelong-learning" target="_blank" class="text-pink-500 hover:underline">https://www.ifla.org/publications/guidelines-on-information-literacy-for-lifelong-learning</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        UNESCO. (2013). <em>Media and Information Literacy: Policy and Strategy Guidelines</em>. 
+                        United Nations Educational, Scientific and Cultural Organization. <a href="https://unesdoc.unesco.org/ark:/48223/pf0000225606" target="_blank" class="text-pink-500 hover:underline">https://unesdoc.unesco.org/ark:/48223/pf0000225606</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        UNESCO. (2021). <em>Media and Information Literate Citizens: Think Critically, Click Wisely!</em> (2nd ed.). 
+                        United Nations Educational, Scientific and Cultural Organization. <a href="https://unesdoc.unesco.org/ark:/48223/pf0000377068" target="_blank" class="text-pink-500 hover:underline">https://unesdoc.unesco.org/ark:/48223/pf0000377068</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Zurkowski, P. G. (1974). <em>The Information Service Environment Relationships and Priorities</em> (Related Paper No. 5). 
+                        National Commission on Libraries and Information Science. ERIC. <a href="https://eric.ed.gov/?id=ED100391" target="_blank" class="text-pink-500 hover:underline">https://eric.ed.gov/?id=ED100391</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Declaraciones Internacionales -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 mb-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-2xl">
+                        🌍
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Declaraciones Internacionales</h2>
+                        <p class="text-gray-600">Pronunciamientos globales sobre ALFIN</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 text-gray-700">
+                    <p class="ref-item">
+                        UNESCO & IFLA. (2003). <em>The Prague Declaration: Towards an Information Literate Society</em>. 
+                        Information Literacy Meeting of Experts, Prague, Czech Republic. <a href="https://www.ifla.org/publications/the-prague-declaration-towards-an-information-literate-society" target="_blank" class="text-pink-500 hover:underline">https://www.ifla.org/publications/the-prague-declaration</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        UNESCO & IFLA. (2005). <em>Beacons of the Information Society: The Alexandria Proclamation on Information Literacy and Lifelong Learning</em>. 
+                        High Level Colloquium on Information Literacy and Lifelong Learning, Alexandria, Egypt. <a href="https://www.ifla.org/publications/beacons-of-the-information-society-the-alexandria-proclamation" target="_blank" class="text-pink-500 hover:underline">https://www.ifla.org/publications/beacons-of-the-information-society</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        UNESCO. (2011). <em>Fez Declaration on Media and Information Literacy</em>. 
+                        First International Forum on Media and Information Literacy, Fez, Morocco. <a href="https://www.unesco.org/en/articles/fez-declaration-media-and-information-literacy" target="_blank" class="text-pink-500 hover:underline">https://www.unesco.org/en/articles/fez-declaration</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        UNESCO. (2012). <em>The Moscow Declaration on Media and Information Literacy</em>. 
+                        International Conference on Media and Information Literacy for Knowledge Societies, Moscow. <a href="https://www.ifla.org/publications/ifla-media-and-information-literacy-recommendations/" target="_blank" class="text-pink-500 hover:underline">https://www.ifla.org/publications/ifla-media-and-information-literacy-recommendations/</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Libros y Artículos -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 mb-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center text-white text-2xl">
+                        📖
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Libros y Artículos Académicos</h2>
+                        <p class="text-gray-600">Investigación y literatura especializada</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 text-gray-700">
+                    <p class="ref-item">
+                        Bawden, D. (2001). Information and digital literacies: A review of concepts. 
+                        <em>Journal of Documentation</em>, 57(2), 218-259. <a href="https://doi.org/10.1108/EUM0000000007083" target="_blank" class="text-pink-500 hover:underline">https://doi.org/10.1108/EUM0000000007083</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Bruce, C. S. (1997). <em>The Seven Faces of Information Literacy</em>. 
+                        Auslib Press.
+                    </p>
+                    
+                    <p class="ref-item">
+                        Eisenberg, M. B., & Berkowitz, R. E. (1990). <em>Information Problem-Solving: The Big Six Skills Approach to Library & Information Skills Instruction</em>. 
+                        Ablex Publishing.
+                    </p>
+                    
+                    <p class="ref-item">
+                        Kuhlthau, C. C. (2004). <em>Seeking Meaning: A Process Approach to Library and Information Services</em> (2nd ed.). 
+                        Libraries Unlimited.
+                    </p>
+                    
+                    <p class="ref-item">
+                        Lau, J. (2013). Conceptual Relationship of Information Literacy and Media Literacy. 
+                        En UNESCO (Ed.), <em>Conceptual Relationship of Information Literacy and Media Literacy in Knowledge Societies</em> (pp. 76-91). 
+                        UNESCO. <a href="https://unesdoc.unesco.org/ark:/48223/pf0000226239" target="_blank" class="text-pink-500 hover:underline">https://unesdoc.unesco.org/ark:/48223/pf0000226239</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Lloyd, A. (2010). <em>Information Literacy Landscapes: Information Literacy in Education, Workplace and Everyday Contexts</em>. 
+                        Chandos Publishing.
+                    </p>
+                    
+                    <p class="ref-item">
+                        Mackey, T. P., & Jacobson, T. E. (2011). Reframing information literacy as a metaliteracy. 
+                        <em>College & Research Libraries</em>, 72(1), 62-78. <a href="https://doi.org/10.5860/crl-76r1" target="_blank" class="text-pink-500 hover:underline">https://doi.org/10.5860/crl-76r1</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Pinto, M., Cordón, J. A., & Gómez Díaz, R. (2010). Thirty years of information literacy (1977-2007): A terminological, conceptual and statistical analysis. 
+                        <em>Journal of Librarianship and Information Science</em>, 42(1), 3-19. <a href="https://doi.org/10.1177/0961000609345091" target="_blank" class="text-pink-500 hover:underline">https://doi.org/10.1177/0961000609345091</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Gestión del Conocimiento -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 mb-8" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl flex items-center justify-center text-white text-2xl">
+                        💡
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Gestión del Conocimiento Organizacional</h2>
+                        <p class="text-gray-600">Recursos sobre KM y aprendizaje organizacional</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 text-gray-700">
+                    <p class="ref-item">
+                        APQC. (2023). <em>Knowledge Management Best Practices Report 2023</em>. 
+                        American Productivity & Quality Center. <a href="https://www.apqc.org/resource-library/resource-collection/knowledge-management-best-practices" target="_blank" class="text-pink-500 hover:underline">https://www.apqc.org/resource-library/knowledge-management</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Davenport, T. H., & Prusak, L. (1998). <em>Working Knowledge: How Organizations Manage What They Know</em>. 
+                        Harvard Business School Press.
+                    </p>
+                    
+                    <p class="ref-item">
+                        Nonaka, I., & Takeuchi, H. (1995). <em>The Knowledge-Creating Company: How Japanese Companies Create the Dynamics of Innovation</em>. 
+                        Oxford University Press.
+                    </p>
+                    
+                    <p class="ref-item">
+                        Senge, P. M. (2006). <em>The Fifth Discipline: The Art & Practice of the Learning Organization</em> (Rev. ed.). 
+                        Doubleday.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Recursos en Español -->
+            <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-3xl shadow-xl p-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-white text-2xl">
+                        🇪🇸
+                    </div>
+                    <div class="text-white">
+                        <h2 class="text-2xl font-bold">Recursos en Español</h2>
+                        <p class="text-white/80">Literatura iberoamericana sobre ALFIN</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 text-white/90">
+                    <p class="ref-item">
+                        Área Moreira, M. (2010). ¿Por qué formar en competencias informacionales y digitales en la educación superior? 
+                        <em>Revista de Universidad y Sociedad del Conocimiento (RUSC)</em>, 7(2), 2-5. <a href="https://doi.org/10.7238/rusc.v7i2.976" target="_blank" class="text-white hover:underline">https://doi.org/10.7238/rusc.v7i2.976</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Gómez Hernández, J. A., & Pasadas Ureña, C. (2007). La alfabetización informacional en bibliotecas públicas: Situación actual y propuestas para una agenda de desarrollo. 
+                        <em>Information Research</em>, 12(3), paper 316. <a href="http://InformationR.net/ir/12-3/paper316.html" target="_blank" class="text-white hover:underline">http://InformationR.net/ir/12-3/paper316.html</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Uribe Tirado, A. (2012). <em>La alfabetización informacional en las universidades cubanas y la visualización de los niveles de incorporación a partir de la información publicada en sus sitios web</em>. 
+                        Universidad de Antioquía. <a href="https://eprints.rclis.org/17299/" target="_blank" class="text-white hover:underline">https://eprints.rclis.org/17299/</a>
+                    </p>
+                    
+                    <p class="ref-item">
+                        Pinto, M. (2010). Design of the IL-HUMASS survey on information literacy in higher education: A self-assessment approach. 
+                        <em>Journal of Information Science</em>, 36(1), 86-103. <a href="https://doi.org/10.1177/0165551509351198" target="_blank" class="text-white hover:underline">https://doi.org/10.1177/0165551509351198</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Explora más sobre ALFIN</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="timeline.html" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    Ver Línea del Tiempo →
+                </a>
+                <a href="recursos.html" class="px-8 py-4 bg-white text-gray-700 font-semibold rounded-full shadow-lg border border-gray-200 hover:border-pink-300">
+                    Recursos Externos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">© 2025 Proyecto Académico ALFIN</p>
+                <p class="text-gray-400 text-sm">Creado por <span class="text-pink-400 font-semibold">Vélez Sánchez Lady Liliana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 30, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ec4899', '#8b5cf6', '#06b6d4'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.2, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#8b5cf6', opacity: 0.15, width: 1 },
+                move: { enable: true, speed: 0.8, direction: 'none', random: true, out_mode: 'out' }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'grab' } },
+                modes: { grab: { distance: 140, line_linked: { opacity: 0.4 } } }
+            }
+        });
+    </script>
+</body>
+</html>

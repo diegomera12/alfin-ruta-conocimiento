@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea del Tiempo ALFIN - Historia</title>
+    <meta name="description" content="Historia y evolución de la Alfabetización Informacional">
+    <meta name="author" content="Vélez Sánchez Lady Liliana">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { primary: '#ec4899', secondary: '#8b5cf6', accent: '#06b6d4' } } }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-bg { background: linear-gradient(135deg, #fdf2f8, #faf5ff, #ecfeff); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #ec4899, #8b5cf6); transition: width 0.3s; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .timeline-item::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #ec4899, #8b5cf6); transform: translateX(-50%); }
+        @media (max-width: 768px) { .timeline-item::before { left: 20px; } }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">A</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">ALFIN</span>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Inicio</a>
+                    <a href="alfin.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Casos de Estudio</a>
+                    <a href="recursos.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Recursos</a>
+                    <a href="timeline.html" class="nav-link active text-pink-500 font-medium">Línea del Tiempo</a>
+                    <a href="como-se-hizo.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Cómo se hizo</a>
+                </div>
+
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-pink-500">Inicio</a>
+                    <a href="alfin.html" class="text-gray-700 font-medium hover:text-pink-500">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="text-gray-700 font-medium hover:text-pink-500">Casos de Estudio</a>
+                    <a href="recursos.html" class="text-gray-700 font-medium hover:text-pink-500">Recursos</a>
+                    <a href="timeline.html" class="text-pink-500 font-medium">Línea del Tiempo</a>
+                    <a href="como-se-hizo.html" class="text-gray-700 font-medium hover:text-pink-500">Cómo se hizo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <span class="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">Historia</span>
+                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                        Línea del <span class="gradient-text">Tiempo</span> ALFIN
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Recorre la fascinante evolución de la Alfabetización Informacional desde sus 
+                        orígenes hasta convertirse en una competencia esencial del siglo XXI.
+                    </p>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="assets/timeline.png" alt="Evolución de ALFIN" class="rounded-3xl shadow-2xl w-full max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-16 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            
+            <!-- 1974 -->
+            <div class="relative mb-16" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                        <div class="bg-white rounded-2xl p-6 shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-xs font-semibold mb-2">El Origen</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">1974</h3>
+                            <h4 class="text-lg font-semibold text-pink-500 mb-3">Paul Zurkowski acuña el término</h4>
+                            <p class="text-gray-600">
+                                Paul Zurkowski, presidente de la Information Industry Association, utiliza por primera vez el término 
+                                "Information Literacy" en un informe para la Comisión Nacional de Bibliotecas de EE.UU., 
+                                definiéndolo como el uso de herramientas de información para resolver problemas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg order-1 md:order-2 flex-shrink-0">
+                        📚
+                    </div>
+                    <div class="md:w-1/2 order-3 hidden md:block"></div>
+                </div>
+            </div>
+
+            <!-- 1989 -->
+            <div class="relative mb-16" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 hidden md:block"></div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0">
+                        📋
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-white rounded-2xl p-6 shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-semibold mb-2">Formalización</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">1989</h3>
+                            <h4 class="text-lg font-semibold text-purple-500 mb-3">Primer informe ALA sobre ALFIN</h4>
+                            <p class="text-gray-600">
+                                La American Library Association (ALA) publica el informe del Presidential Committee on 
+                                Information Literacy, estableciendo las bases teóricas y la importancia de ALFIN 
+                                para la democracia y el aprendizaje permanente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2000 -->
+            <div class="relative mb-16" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                        <div class="bg-white rounded-2xl p-6 shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-xs font-semibold mb-2">Estándares</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">2000</h3>
+                            <h4 class="text-lg font-semibold text-cyan-500 mb-3">ACRL publica primeros estándares</h4>
+                            <p class="text-gray-600">
+                                La Association of College & Research Libraries publica los "Information Literacy 
+                                Competency Standards for Higher Education", estableciendo 5 estándares y 22 indicadores 
+                                de rendimiento que guiarían la educación superior durante 15 años.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg order-1 md:order-2 flex-shrink-0">
+                        🎓
+                    </div>
+                    <div class="md:w-1/2 order-3 hidden md:block"></div>
+                </div>
+            </div>
+
+            <!-- 2003 -->
+            <div class="relative mb-16" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 hidden md:block"></div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0">
+                        🌍
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-white rounded-2xl p-6 shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-amber-100 text-amber-600 rounded-full text-xs font-semibold mb-2">Declaración Global</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">2003</h3>
+                            <h4 class="text-lg font-semibold text-amber-500 mb-3">Declaración de Praga</h4>
+                            <p class="text-gray-600">
+                                Expertos de 23 países se reúnen en Praga y emiten una declaración reconociendo 
+                                a la Alfabetización Informacional como un componente clave del aprendizaje 
+                                permanente y prerrequisito para la participación ciudadana.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2005 -->
+            <div class="relative mb-16" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                        <div class="bg-white rounded-2xl p-6 shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-semibold mb-2">UNESCO</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">2005</h3>
+                            <h4 class="text-lg font-semibold text-green-500 mb-3">Declaración de Alejandría</h4>
+                            <p class="text-gray-600">
+                                UNESCO e IFLA organizan el Coloquio de Alto Nivel en Alejandría, Egipto. 
+                                Se proclama que ALFIN y el aprendizaje permanente son "faros de la Sociedad 
+                                de la Información" y derechos humanos fundamentales.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg order-1 md:order-2 flex-shrink-0">
+                        🏛️
+                    </div>
+                    <div class="md:w-1/2 order-3 hidden md:block"></div>
+                </div>
+            </div>
+
+            <!-- 2011 -->
+            <div class="relative mb-16" data-aos="fade-up" data-aos-delay="500">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 hidden md:block"></div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0">
+                        📱
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-white rounded-2xl p-6 shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-xs font-semibold mb-2">Convergencia</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">2011</h3>
+                            <h4 class="text-lg font-semibold text-violet-500 mb-3">UNESCO introduce MIL</h4>
+                            <p class="text-gray-600">
+                                UNESCO desarrolla el concepto de Media and Information Literacy (MIL), 
+                                unificando alfabetización informacional y mediática. Se publica el 
+                                "MIL Curriculum for Teachers" para integrar estas competencias en la educación.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2016 -->
+            <div class="relative mb-16" data-aos="fade-up" data-aos-delay="600">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 md:text-right order-2 md:order-1">
+                        <div class="bg-white rounded-2xl p-6 shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-rose-100 text-rose-600 rounded-full text-xs font-semibold mb-2">Nuevo Marco</span>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">2016</h3>
+                            <h4 class="text-lg font-semibold text-rose-500 mb-3">Framework ACRL</h4>
+                            <p class="text-gray-600">
+                                ACRL reemplaza los estándares de 2000 con el nuevo "Framework for Information 
+                                Literacy for Higher Education", basado en 6 marcos conceptuales (threshold concepts) 
+                                que profundizan la comprensión del ecosistema informacional.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg order-1 md:order-2 flex-shrink-0">
+                        🔄
+                    </div>
+                    <div class="md:w-1/2 order-3 hidden md:block"></div>
+                </div>
+            </div>
+
+            <!-- 2020s -->
+            <div class="relative" data-aos="fade-up" data-aos-delay="700">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 hidden md:block"></div>
+                    <div class="w-20 h-20 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0">
+                        🤖
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-2xl p-6 shadow-xl text-white">
+                            <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold mb-2">Era Actual</span>
+                            <h3 class="text-2xl font-bold mb-2">2020 - 2025</h3>
+                            <h4 class="text-lg font-semibold mb-3">ALFIN en la era de la IA</h4>
+                            <p class="text-white/90">
+                                ALFIN evoluciona para abordar nuevos desafíos: desinformación, fake news, 
+                                deepfakes e inteligencia artificial generativa. Las competencias críticas 
+                                son más importantes que nunca para navegar el ecosistema digital actual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Conoce las competencias ALFIN actuales</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="alfin.html" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                    Ver Competencias →
+                </a>
+                <a href="bibliografia.html" class="px-8 py-4 bg-white text-gray-700 font-semibold rounded-full shadow-lg border border-gray-200 hover:border-pink-300">
+                    Consultar Bibliografía
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">© 2025 Proyecto Académico ALFIN</p>
+                <p class="text-gray-400 text-sm">Creado por <span class="text-pink-400 font-semibold">Vélez Sánchez Lady Liliana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        
+        // Particles configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ec4899', '#8b5cf6', '#06b6d4'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.3, random: true },
+                size: { value: 4, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ec4899', opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 1, direction: 'none', random: true, out_mode: 'out' }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } },
+                modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } }, push: { particles_nb: 3 } }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía ALFIN - Descarga Gratuita</title>
+    <meta name="description" content="Descarga la infografía de las 6 Competencias ALFIN">
+    <meta name="author" content="Vélez Sánchez Lady Liliana">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { primary: '#ec4899', secondary: '#8b5cf6', accent: '#06b6d4' } } }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .gradient-bg { background: linear-gradient(135deg, #fdf2f8, #faf5ff, #ecfeff); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #ec4899, #8b5cf6); transition: width 0.3s; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .infographic-preview { transition: all 0.3s ease; cursor: pointer; }
+        .infographic-preview:hover { transform: scale(1.02); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">A</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">ALFIN</span>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Inicio</a>
+                    <a href="alfin.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Casos de Estudio</a>
+                    <a href="recursos.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Recursos</a>
+                    <a href="timeline.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Línea del Tiempo</a>
+                    <a href="como-se-hizo.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Cómo se hizo</a>
+                </div>
+
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="text-gray-700 font-medium hover:text-pink-500">Inicio</a>
+                    <a href="alfin.html" class="text-gray-700 font-medium hover:text-pink-500">¿Qué es ALFIN?</a>
+                    <a href="caso.html" class="text-gray-700 font-medium hover:text-pink-500">Casos de Estudio</a>
+                    <a href="recursos.html" class="text-gray-700 font-medium hover:text-pink-500">Recursos</a>
+                    <a href="timeline.html" class="text-gray-700 font-medium hover:text-pink-500">Línea del Tiempo</a>
+                    <a href="como-se-hizo.html" class="text-gray-700 font-medium hover:text-pink-500">Cómo se hizo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-16 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 bg-rose-100 text-rose-600 rounded-full text-sm font-semibold mb-4">📥 Material Descargable</span>
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                <span class="gradient-text">Infografía</span> ALFIN
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                Descarga gratis esta infografía creada con inteligencia artificial que resume 
+                las 6 competencias clave de la Alfabetización Informacional.
+            </p>
+        </div>
+    </section>
+
+    <!-- Infographic Preview -->
+    <section class="py-16 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden" data-aos="fade-up">
+                <!-- Preview Card -->
+                <div class="p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800">Las 6 Competencias ALFIN</h2>
+                            <p class="text-gray-600">Infografía en español generada con IA</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-xs font-semibold">✓ Gratis</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-semibold">PNG HD</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Preview -->
+                    <a href="assets/infografia.png" download="Infografia_ALFIN_Competencias.png" class="block">
+                        <div class="infographic-preview rounded-2xl overflow-hidden border-4 border-gray-100">
+                            <img src="assets/infografia.png" alt="Infografía Las 6 Competencias ALFIN" class="w-full">
+                        </div>
+                    </a>
+                    
+                    <!-- Download Button -->
+                    <div class="mt-8 text-center">
+                        <a href="assets/infografia.png" download="Infografia_ALFIN_Competencias.png" 
+                           class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            Descargar Infografía (PNG HD)
+                        </a>
+                        <p class="text-gray-500 text-sm mt-3">Haz clic en la imagen o en el botón para descargar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside -->
+    <section class="py-16 px-6 bg-white relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12" data-aos="fade-up">¿Qué incluye la infografía?</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center text-2xl mb-4">🎯</div>
+                    <h3 class="font-bold text-gray-800 mb-2">1. Identificar</h3>
+                    <p class="text-gray-600 text-sm">Reconocer cuándo se necesita información y definir claramente qué se busca.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-2xl mb-4">🔍</div>
+                    <h3 class="font-bold text-gray-800 mb-2">2. Localizar</h3>
+                    <p class="text-gray-600 text-sm">Saber dónde y cómo buscar información utilizando diversas fuentes.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-4">⚖️</div>
+                    <h3 class="font-bold text-gray-800 mb-2">3. Evaluar</h3>
+                    <p class="text-gray-600 text-sm">Analizar críticamente la calidad, relevancia y veracidad de la información.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-cyan-50 to-green-50 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl mb-4">🔧</div>
+                    <h3 class="font-bold text-gray-800 mb-2">4. Usar</h3>
+                    <p class="text-gray-600 text-sm">Aplicar la información de manera ética, respetando derechos de autor.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-amber-50 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-2xl mb-4">💬</div>
+                    <h3 class="font-bold text-gray-800 mb-2">5. Comunicar</h3>
+                    <p class="text-gray-600 text-sm">Compartir conocimiento de forma clara y adaptada al contexto.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-amber-50 to-rose-50 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center text-2xl mb-4">📈</div>
+                    <h3 class="font-bold text-gray-800 mb-2">6. Aprender</h3>
+                    <p class="text-gray-600 text-sm">Desarrollar habilidades de aprendizaje autónomo y actualización continua.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="py-16 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-3xl p-8 text-white" data-aos="fade-up">
+                <h2 class="text-2xl font-bold mb-6 text-center">💡 ¿Cómo usar esta infografía?</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white/10 rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">1</div>
+                            <h3 class="font-semibold">En presentaciones</h3>
+                        </div>
+                        <p class="text-white/80 text-sm">Incluye la infografía en tus diapositivas para explicar ALFIN de forma visual.</p>
+                    </div>
+                    
+                    <div class="bg-white/10 rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">2</div>
+                            <h3 class="font-semibold">Como material de estudio</h3>
+                        </div>
+                        <p class="text-white/80 text-sm">Úsala como guía rápida para recordar las 6 competencias informacionales.</p>
+                    </div>
+                    
+                    <div class="bg-white/10 rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">3</div>
+                            <h3 class="font-semibold">Para compartir</h3>
+                        </div>
+                        <p class="text-white/80 text-sm">Envíala a colegas o compañeros que quieran conocer sobre ALFIN.</p>
+                    </div>
+                    
+                    <div class="bg-white/10 rounded-xl p-5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold">4</div>
+                            <h3 class="font-semibold">Imprimir</h3>
+                        </div>
+                        <p class="text-white/80 text-sm">Imprime en alta calidad para tener como póster en tu espacio de trabajo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Resources -->
+    <section class="py-16 px-6 bg-white relative z-10">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Explora más recursos</h2>
+            <p class="text-gray-600 mb-8">Descubre todo el contenido disponible sobre Alfabetización Informacional</p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="alfin.html" class="px-6 py-3 bg-white text-gray-700 font-semibold rounded-full shadow-lg border border-gray-200 hover:border-pink-300 transition">
+                    Las 6 Competencias
+                </a>
+                <a href="caso.html" class="px-6 py-3 bg-white text-gray-700 font-semibold rounded-full shadow-lg border border-gray-200 hover:border-pink-300 transition">
+                    Casos de Estudio
+                </a>
+                <a href="timeline.html" class="px-6 py-3 bg-white text-gray-700 font-semibold rounded-full shadow-lg border border-gray-200 hover:border-pink-300 transition">
+                    Línea del Tiempo
+                </a>
+                <a href="bibliografia.html" class="px-6 py-3 bg-white text-gray-700 font-semibold rounded-full shadow-lg border border-gray-200 hover:border-pink-300 transition">
+                    Bibliografía
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">© 2025 Proyecto Académico ALFIN</p>
+                <p class="text-gray-400 text-sm">Creado por <span class="text-pink-400 font-semibold">Vélez Sánchez Lady Liliana</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 40, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ec4899', '#8b5cf6', '#06b6d4'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.2, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ec4899', opacity: 0.15, width: 1 },
+                move: { enable: true, speed: 1, direction: 'none', random: true, out_mode: 'out' }
+            }
+        });
+    </script>
+</body>
+</html>

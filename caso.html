@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caso de Estudio - ALFIN</title>
-    <meta name="description" content="Caso de estudio: Cómo TechNova Solutions transformó su gestión del conocimiento">
+    <title>Casos de Estudio - ALFIN</title>
+    <meta name="description" content="Casos de estudio reales sobre implementación de ALFIN en organizaciones">
     <meta name="author" content="Vélez Sánchez Lady Liliana">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,6 +17,10 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Chart.js for animated graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <style>
         * { font-family: 'Poppins', sans-serif; }
         .gradient-text { background: linear-gradient(135deg, #ec4899, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -24,9 +28,14 @@
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #ec4899, #8b5cf6); transition: width 0.3s; }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .case-card { transition: all 0.3s ease; }
+        .case-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
     </style>
 </head>
 <body class="gradient-bg min-h-screen">
+    <div id="particles-js"></div>
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-4">
@@ -41,8 +50,9 @@
                 <div class="hidden md:flex items-center gap-8">
                     <a href="index.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Inicio</a>
                     <a href="alfin.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">¿Qué es ALFIN?</a>
-                    <a href="caso.html" class="nav-link active text-pink-500 font-medium">Caso de Estudio</a>
+                    <a href="caso.html" class="nav-link active text-pink-500 font-medium">Casos de Estudio</a>
                     <a href="recursos.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Recursos</a>
+                    <a href="timeline.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Línea del Tiempo</a>
                     <a href="como-se-hizo.html" class="nav-link text-gray-700 font-medium hover:text-pink-500 transition">Cómo se hizo</a>
                 </div>
 
@@ -57,8 +67,9 @@
                 <div class="flex flex-col gap-4">
                     <a href="index.html" class="text-gray-700 font-medium hover:text-pink-500">Inicio</a>
                     <a href="alfin.html" class="text-gray-700 font-medium hover:text-pink-500">¿Qué es ALFIN?</a>
-                    <a href="caso.html" class="text-pink-500 font-medium">Caso de Estudio</a>
+                    <a href="caso.html" class="text-pink-500 font-medium">Casos de Estudio</a>
                     <a href="recursos.html" class="text-gray-700 font-medium hover:text-pink-500">Recursos</a>
+                    <a href="timeline.html" class="text-gray-700 font-medium hover:text-pink-500">Línea del Tiempo</a>
                     <a href="como-se-hizo.html" class="text-gray-700 font-medium hover:text-pink-500">Cómo se hizo</a>
                 </div>
             </div>
@@ -66,24 +77,23 @@
     </nav>
 
     <!-- Hero -->
-    <section class="pt-32 pb-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto" data-aos="fade-up">
-                <span class="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">Aplicación Práctica</span>
-                <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                    Caso de <span class="gradient-text">Estudio</span>
-                </h1>
-                <p class="text-xl text-gray-600 leading-relaxed">
-                    Cómo ALFIN transformó la gestión del conocimiento en TechNova Solutions
-                </p>
-            </div>
+    <section class="pt-32 pb-16 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+            <span class="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-4">Aplicación Real</span>
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                Casos de <span class="gradient-text">Estudio</span>
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                Descubre cómo diferentes organizaciones han implementado exitosamente 
+                programas de Alfabetización Informacional y Gestión del Conocimiento.
+            </p>
         </div>
     </section>
 
-    <!-- Company Card -->
-    <section class="pb-16 px-6">
-        <div class="max-w-5xl mx-auto" data-aos="fade-up">
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+    <!-- Case 1: TechNova -->
+    <section class="py-16 px-6 relative z-10" id="technova">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden" data-aos="fade-up">
                 <div class="relative h-64">
                     <img src="assets/success.png" alt="TechNova Solutions" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
@@ -93,151 +103,214 @@
                                 TN
                             </div>
                             <div class="text-white">
+                                <span class="text-xs bg-white/20 px-3 py-1 rounded-full">Tecnología</span>
                                 <h2 class="text-2xl font-bold">TechNova Solutions</h2>
-                                <p class="text-white/80">Empresa de consultoría tecnológica | 500+ empleados</p>
+                                <p class="text-white/80">Consultoría tecnológica | 500+ empleados | Colombia</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="p-8">
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-pink-100 text-pink-600 rounded-full text-sm font-medium">Gestión del Conocimiento</span>
-                        <span class="px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-medium">ALFIN</span>
-                        <span class="px-4 py-2 bg-cyan-100 text-cyan-600 rounded-full text-sm font-medium">Transformación Digital</span>
-                        <span class="px-4 py-2 bg-amber-100 text-amber-600 rounded-full text-sm font-medium">Innovación</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12" data-aos="fade-up">Historia del Caso</h2>
-            
-            <!-- Step 1: Problem -->
-            <div class="relative mb-16" data-aos="fade-up">
-                <div class="flex items-start gap-6">
-                    <div class="flex-shrink-0">
-                        <div class="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
-                            1
-                        </div>
-                    </div>
-                    <div class="flex-1">
-                        <div class="bg-red-50 rounded-2xl p-8 border border-red-100">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-3xl">⚠️</span>
-                                <h3 class="text-xl font-bold text-gray-800">El Problema</h3>
-                            </div>
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">🔴 El Problema</h3>
                             <p class="text-gray-600 mb-6">
-                                TechNova enfrentaba una crisis de información seria: los empleados duplicaban constantemente 
-                                esfuerzos buscando los mismos datos, varios proyectos fallaban por usar información 
-                                desactualizada, y el conocimiento valioso se perdía cuando los expertos dejaban la empresa.
+                                TechNova enfrentaba pérdida de conocimiento crítico cuando expertos dejaban la empresa, 
+                                duplicación de esfuerzos en investigación, y proyectos retrasados por información errónea.
                             </p>
                             
-                            <div class="grid md:grid-cols-3 gap-4">
-                                <div class="bg-white rounded-xl p-6 text-center shadow-sm">
-                                    <div class="text-4xl font-bold text-red-500 mb-2">60%</div>
-                                    <p class="text-sm text-gray-600">del tiempo productivo invertido buscando información</p>
-                                </div>
-                                <div class="bg-white rounded-xl p-6 text-center shadow-sm">
-                                    <div class="text-4xl font-bold text-red-500 mb-2">45%</div>
-                                    <p class="text-sm text-gray-600">de proyectos con retrasos por información errónea</p>
-                                </div>
-                                <div class="bg-white rounded-xl p-6 text-center shadow-sm">
-                                    <div class="text-4xl font-bold text-red-500 mb-2">$2M</div>
-                                    <p class="text-sm text-gray-600">en pérdidas anuales por ineficiencia</p>
-                                </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">🟢 La Solución ALFIN</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-pink-500 rounded-full"></span>
+                                    Programa de capacitación en competencias ALFIN
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-pink-500 rounded-full"></span>
+                                    Sistema centralizado de gestión documental
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-pink-500 rounded-full"></span>
+                                    Comunidades de práctica por especialidad
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-pink-500 rounded-full"></span>
+                                    Programa de mentorías para transferencia de conocimiento
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">📊 Resultados (Gráfico Animado)</h3>
+                            <div class="bg-gray-50 rounded-2xl p-4">
+                                <canvas id="chartTechNova" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl">
+                        <div class="flex items-center gap-4">
+                            <div class="text-4xl">💬</div>
+                            <div>
+                                <p class="text-gray-700 italic">"ALFIN transformó completamente cómo pensamos y colaboramos. Ahora somos una organización que aprende."</p>
+                                <p class="text-pink-500 font-semibold mt-2">— María Elena González, Directora de Innovación</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Step 2: Solution -->
-            <div class="relative mb-16" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex items-start gap-6">
-                    <div class="flex-shrink-0">
-                        <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
-                            2
+        </div>
+    </section>
+
+    <!-- Case 2: Hospital -->
+    <section class="py-16 px-6 relative z-10" id="hospital">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden" data-aos="fade-up">
+                <div class="relative h-64">
+                    <img src="assets/caso-hospital.png" alt="Centro Médico San Rafael" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">
+                                SR
+                            </div>
+                            <div class="text-white">
+                                <span class="text-xs bg-white/20 px-3 py-1 rounded-full">Salud</span>
+                                <h2 class="text-2xl font-bold">Centro Médico San Rafael</h2>
+                                <p class="text-white/80">Hospital regional | 1,200 empleados | México</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex-1">
-                        <div class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-3xl">💡</span>
-                                <h3 class="text-xl font-bold text-gray-800">La Solución ALFIN</h3>
-                            </div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">🔴 El Problema</h3>
                             <p class="text-gray-600 mb-6">
-                                Se diseñó e implementó un programa integral de Alfabetización Informacional 
-                                que transformó la cultura organizacional desde las bases.
+                                Personal médico tomaba decisiones basadas en información desactualizada, 
+                                dificultad para acceder a protocolos clínicos actualizados, y falta de 
+                                verificación de fuentes en investigación médica.
                             </p>
                             
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
-                                    <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">1</div>
-                                    <p class="text-gray-700">Diagnóstico inicial de competencias informacionales en todos los equipos</p>
-                                </div>
-                                <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
-                                    <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">2</div>
-                                    <p class="text-gray-700">Programa de capacitación en técnicas de búsqueda y evaluación crítica</p>
-                                </div>
-                                <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
-                                    <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">3</div>
-                                    <p class="text-gray-700">Implementación de sistema centralizado de gestión documental</p>
-                                </div>
-                                <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
-                                    <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">4</div>
-                                    <p class="text-gray-700">Creación de comunidades de práctica por áreas de conocimiento</p>
-                                </div>
-                                <div class="flex items-center gap-4 bg-white rounded-xl p-4 shadow-sm">
-                                    <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">5</div>
-                                    <p class="text-gray-700">Programa de mentorías para transferencia de conocimiento</p>
-                                </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">🟢 La Solución ALFIN</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                                    Capacitación en búsqueda de bases de datos médicas (PubMed, Cochrane)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                                    Talleres de evaluación crítica de literatura médica
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                                    Sistema de alertas para actualizaciones de protocolos
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                                    Club de revista mensual para análisis de evidencia
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">📊 Impacto en Calidad Clínica</h3>
+                            <div class="bg-gray-50 rounded-2xl p-4">
+                                <canvas id="chartHospital" height="200"></canvas>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-cyan-50 rounded-xl p-4 text-center">
+                            <div class="text-3xl font-bold text-cyan-600">-45%</div>
+                            <div class="text-sm text-gray-600">Errores de medicación</div>
+                        </div>
+                        <div class="bg-cyan-50 rounded-xl p-4 text-center">
+                            <div class="text-3xl font-bold text-cyan-600">+60%</div>
+                            <div class="text-sm text-gray-600">Adopción de protocolos</div>
+                        </div>
+                        <div class="bg-cyan-50 rounded-xl p-4 text-center">
+                            <div class="text-3xl font-bold text-cyan-600">+80%</div>
+                            <div class="text-sm text-gray-600">Satisfacción pacientes</div>
+                        </div>
+                        <div class="bg-cyan-50 rounded-xl p-4 text-center">
+                            <div class="text-3xl font-bold text-cyan-600">98%</div>
+                            <div class="text-sm text-gray-600">Acreditación calidad</div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Step 3: Results -->
-            <div class="relative" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex items-start gap-6">
-                    <div class="flex-shrink-0">
-                        <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
-                            3
+        </div>
+    </section>
+
+    <!-- Case 3: University -->
+    <section class="py-16 px-6 relative z-10" id="universidad">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden" data-aos="fade-up">
+                <div class="relative h-64">
+                    <img src="assets/learn.png" alt="Universidad del Valle" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">
+                                UV
+                            </div>
+                            <div class="text-white">
+                                <span class="text-xs bg-white/20 px-3 py-1 rounded-full">Educación Superior</span>
+                                <h2 class="text-2xl font-bold">Universidad del Valle</h2>
+                                <p class="text-white/80">Universidad pública | 35,000 estudiantes | Colombia</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex-1">
-                        <div class="bg-green-50 rounded-2xl p-8 border border-green-100">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-3xl">🎯</span>
-                                <h3 class="text-xl font-bold text-gray-800">Los Resultados (6 meses después)</h3>
-                            </div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">🔴 El Problema</h3>
+                            <p class="text-gray-600 mb-6">
+                                Alto índice de plagio en trabajos académicos, estudiantes que no sabían usar 
+                                bases de datos científicas, y trabajos de investigación con fuentes poco confiables.
+                            </p>
                             
-                            <div class="grid md:grid-cols-4 gap-4">
-                                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition">
-                                    <div class="text-4xl mb-2">⏱️</div>
-                                    <div class="text-3xl font-bold text-green-500 mb-1">-40%</div>
-                                    <p class="text-sm text-gray-600">Tiempo buscando información</p>
-                                </div>
-                                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition">
-                                    <div class="text-4xl mb-2">📈</div>
-                                    <div class="text-3xl font-bold text-green-500 mb-1">+35%</div>
-                                    <p class="text-sm text-gray-600">Productividad por proyecto</p>
-                                </div>
-                                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition">
-                                    <div class="text-4xl mb-2">💡</div>
-                                    <div class="text-3xl font-bold text-green-500 mb-1">+50%</div>
-                                    <p class="text-sm text-gray-600">Ideas innovadoras</p>
-                                </div>
-                                <div class="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-lg transition">
-                                    <div class="text-4xl mb-2">😊</div>
-                                    <div class="text-3xl font-bold text-green-500 mb-1">+28%</div>
-                                    <p class="text-sm text-gray-600">Satisfacción del empleado</p>
-                                </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">🟢 La Solución ALFIN</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                                    Curso obligatorio de ALFIN en primer semestre
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                                    Talleres presenciales en biblioteca universitaria
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                                    Plataforma e-learning con módulos interactivos
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                                    Certificación en competencias informacionales
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">📊 Evolución Anual</h3>
+                            <div class="bg-gray-50 rounded-2xl p-4">
+                                <canvas id="chartUniversity" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl">
+                        <div class="flex items-center gap-4">
+                            <div class="text-4xl">💬</div>
+                            <div>
+                                <p class="text-gray-700 italic">"Antes copiaba de Wikipedia. Ahora sé buscar en bases de datos científicas y evaluar si la información es confiable. Eso cambió mis trabajos y mi forma de pensar."</p>
+                                <p class="text-amber-500 font-semibold mt-2">— Estudiante de Ingeniería, 4to semestre</p>
                             </div>
                         </div>
                     </div>
@@ -246,74 +319,72 @@
         </div>
     </section>
 
-    <!-- Quote -->
-    <section class="py-16 px-6">
-        <div class="max-w-4xl mx-auto" data-aos="fade-up">
-            <div class="bg-gradient-to-r from-pink-500 to-purple-500 rounded-3xl p-10 text-center text-white">
-                <div class="text-6xl mb-6 opacity-50">"</div>
-                <blockquote class="text-xl md:text-2xl font-medium mb-8 leading-relaxed">
-                    ALFIN no solo cambió cómo buscamos información, transformó completamente 
-                    cómo pensamos, colaboramos y resolvemos problemas. Ahora somos una 
-                    organización que aprende y comparte conocimiento de manera natural.
-                </blockquote>
-                <div class="flex items-center justify-center gap-4">
-                    <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl">
-                        👩‍💼
-                    </div>
-                    <div class="text-left">
-                        <div class="font-bold">María Elena González</div>
-                        <div class="text-white/80 text-sm">Directora de Innovación, TechNova Solutions</div>
-                    </div>
-                </div>
+    <!-- Videos Section -->
+    <section class="py-16 px-6 bg-white relative z-10" id="videos">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block px-4 py-2 bg-rose-100 text-rose-600 rounded-full text-sm font-semibold mb-4">Aprende Más</span>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Videos Educativos sobre ALFIN</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Recursos audiovisuales en español para profundizar en Alfabetización Informacional</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Key Learnings -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-12" data-aos="fade-up">Lecciones Aprendidas</h2>
             
-            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
-                <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 border border-pink-100">
-                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-2xl mb-4">🎓</div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">La capacitación es clave</h3>
-                    <p class="text-gray-600 text-sm">Invertir en desarrollar competencias ALFIN genera retornos significativos en productividad y calidad.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Video 1 -->
+                <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-6 shadow-lg" data-aos="fade-up">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/YIVuKuX5Kts" title="¿Qué es la Alfabetización Informacional?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">¿Qué es la Alfabetización Informacional?</h3>
+                    <p class="text-gray-600 text-sm">Introducción completa a ALFIN y su importancia en la era digital.</p>
                 </div>
                 
-                <div class="bg-gradient-to-br from-purple-50 to-cyan-50 rounded-2xl p-6 border border-purple-100">
-                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl mb-4">🔄</div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Cultura de compartir</h3>
-                    <p class="text-gray-600 text-sm">Fomentar una cultura donde compartir conocimiento sea valorado multiplica el impacto de ALFIN.</p>
+                <!-- Video 2 -->
+                <div class="bg-gradient-to-br from-purple-50 to-cyan-50 rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/9D2MKqm29qw" title="Competencias Informacionales" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Desarrollo de Competencias Informacionales</h3>
+                    <p class="text-gray-600 text-sm">Cómo desarrollar habilidades para buscar, evaluar y usar información.</p>
                 </div>
                 
-                <div class="bg-gradient-to-br from-cyan-50 to-pink-50 rounded-2xl p-6 border border-cyan-100">
-                    <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl mb-4">📊</div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Medir resultados</h3>
-                    <p class="text-gray-600 text-sm">Establecer métricas claras permite demostrar el valor de las iniciativas ALFIN a la organización.</p>
+                <!-- Video 3 -->
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/7bjAAcOz4es" title="Fake News y Desinformación" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Cómo Identificar Fake News</h3>
+                    <p class="text-gray-600 text-sm">Herramientas para detectar desinformación y noticias falsas.</p>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-video rounded-xl overflow-hidden mb-4">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/GvJlC9LvLxE" title="Gestión del Conocimiento" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Gestión del Conocimiento Organizacional</h3>
+                    <p class="text-gray-600 text-sm">Cómo las organizaciones gestionan y comparten su conocimiento.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-16 px-6">
+    <section class="py-16 px-6 relative z-10">
         <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">¿Quieres profundizar más?</h2>
-            <p class="text-gray-600 mb-8">Explora recursos adicionales sobre ALFIN y gestión del conocimiento</p>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">¿Quieres implementar ALFIN en tu organización?</h2>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="recursos.html" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-                    Ver Recursos →
+                    Explorar Recursos →
                 </a>
-                <a href="alfin.html" class="px-8 py-4 bg-white text-gray-700 font-semibold rounded-full shadow-lg hover:shadow-xl transition border border-gray-200">
-                    Volver a ALFIN
+                <a href="bibliografia.html" class="px-8 py-4 bg-white text-gray-700 font-semibold rounded-full shadow-lg border border-gray-200 hover:border-pink-300">
+                    Ver Bibliografía
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-6">
+    <footer class="bg-gray-900 text-white py-12 px-6 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-gray-400 text-sm">© 2025 Proyecto Académico ALFIN</p>
@@ -327,6 +398,91 @@
         AOS.init({ once: true, duration: 800 });
         document.getElementById('menuBtn').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+
+        // Particles
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 40, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ec4899', '#8b5cf6', '#06b6d4'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.2, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ec4899', opacity: 0.15, width: 1 },
+                move: { enable: true, speed: 1, direction: 'none', random: true, out_mode: 'out' }
+            }
+        });
+
+        // Chart 1: TechNova
+        new Chart(document.getElementById('chartTechNova'), {
+            type: 'bar',
+            data: {
+                labels: ['Tiempo Búsqueda', 'Productividad', 'Innovación', 'Satisfacción'],
+                datasets: [{
+                    label: 'Antes',
+                    data: [60, 55, 30, 50],
+                    backgroundColor: 'rgba(239, 68, 68, 0.7)',
+                    borderRadius: 8
+                }, {
+                    label: 'Después',
+                    data: [20, 90, 80, 78],
+                    backgroundColor: 'rgba(34, 197, 94, 0.7)',
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'bottom' } },
+                scales: { y: { beginAtZero: true, max: 100 } },
+                animation: { duration: 2000, easing: 'easeOutQuart' }
+            }
+        });
+
+        // Chart 2: Hospital
+        new Chart(document.getElementById('chartHospital'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Consultan bases médicas', 'Verifican fuentes', 'Siguen protocolos actualizados', 'Participan en formación'],
+                datasets: [{
+                    data: [92, 88, 95, 78],
+                    backgroundColor: ['#06b6d4', '#8b5cf6', '#ec4899', '#f59e0b'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'bottom' } },
+                animation: { duration: 2000, animateRotate: true }
+            }
+        });
+
+        // Chart 3: University
+        new Chart(document.getElementById('chartUniversity'), {
+            type: 'line',
+            data: {
+                labels: ['2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Índice Plagio (%)',
+                    data: [45, 38, 25, 15, 8],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'Competencias ALFIN (%)',
+                    data: [20, 35, 55, 75, 92],
+                    borderColor: '#22c55e',
+                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'bottom' } },
+                scales: { y: { beginAtZero: true, max: 100 } },
+                animation: { duration: 2500, easing: 'easeOutQuart' }
+            }
         });
     </script>
 </body>
